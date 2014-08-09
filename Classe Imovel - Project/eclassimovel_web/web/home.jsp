@@ -15,9 +15,11 @@ and open the template in the editor.
     <body>
         <%@ include file = "header.jsp" %>
          <div class="content-search">
+             <form>
                 <input type="search" placeholder="Cidade"/>
                 <input type="search" placeholder="Bairro"/>
                 <button>Pesquisar</button>
+             </form>
          
         </div>
         <div class="content-image">
