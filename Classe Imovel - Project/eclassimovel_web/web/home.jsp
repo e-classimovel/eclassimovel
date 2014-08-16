@@ -13,6 +13,7 @@ and open the template in the editor.
     
     </head>
     <body>
+        <%@include file = "conexao.jsp" %>
         <%@ include file = "header.jsp" %>
          <div class="content-search">
              <form>

@@ -34,7 +34,6 @@
                     <li><a href="./cadastro_cliente.jsp">Cadastro</a></li>
                     <li><a href="./cadastro_imovel.jsp">Imoveis</a></li>
                     <li><a href="./quem_somos.jsp">Quem somos</a></li>
-                    <li><a href="./conexao.jsp">Teste</a></li>
                 </ul>
             </nav>
         </div>
@@ -47,4 +46,5 @@
         </div>
                  
     </section>
+
 </header>
