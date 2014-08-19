@@ -13,8 +13,8 @@ and open the template in the editor.
     
     </head>
     <body>
-        <%@include file = "conexao.jsp" %>
-        <%@ include file = "header.jsp" %>
+        <%@include file = "/DAO_JSP/conexao.jsp" %>
+        <%@ include file = "/COMPONENTES/header.jsp" %>
          <div class="content-search">
              <form>
                 <input type="search" placeholder="Cidade"/>
@@ -27,7 +27,7 @@ and open the template in the editor.
             <img src="./css/imagens/imovel3.jpg" style="width: 100%;height: 540px;" class="img-principal"/>
         </div>
 
-        <%@ include file = "busca-lateral.jsp" %>
+        <%@ include file = "/COMPONENTES/busca-lateral.jsp" %>
         <div class='content-default'>
 
         <div id="body"> 
@@ -63,6 +63,6 @@ and open the template in the editor.
         </div>
         </div>
         <script src="script/home.js" type="text/javascript"></script>
-        <%@include file = "footer.jsp" %>
+        <%@include file = "/COMPONENTES/footer.jsp" %>
     </body>
 </html>

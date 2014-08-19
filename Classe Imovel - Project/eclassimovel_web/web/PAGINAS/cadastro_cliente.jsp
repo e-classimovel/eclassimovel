@@ -13,7 +13,8 @@
         
     </head>
     <body>
-        <%@include file = "header.jsp" %>
+        <%@include file = "/COMPONENTES/header.jsp" %>
+        <%@include file = "/DAO_JSP/ClienteDAO/InserirCliente.jsp" %>
         <div id="body">
             <section class="content-wrapper main-content clear-fix" style="max-width: 100%;">
                 <div class="content-cadastro">
@@ -22,25 +23,31 @@
                             <div class= "nome">
                                 <label>Nome</label>
                                 <div class ="input_nome">
-                                    <input type="text" value="">
+                                    <input id="cliente_nome" name="cliente_nome" type="text" value="">
                                 </div>
                             </div>
                             <div class = "sobrenome">
                                 <label>Sobrenome</label>
                                 <div class= "input_sobrenome">
-                                    <input type="text" value="">
+                                    <input id="cliente_sobrenome" name="cliente_sobrenome" type="text" value="">
                                 </div>
                             </div>
                             <div class="data">
                                 <label>Data de Nascimento</label>
                                 <div class="input_data">
-                                    <input type="date" value=""/>
+                                    <input id="cliente_dtNascimento" name="cliente_dtNascimento" type="date" value=""/>
                                 </div>
                             </div>  
+                            <div class="cpf">
+                                <label> CPF</label>
+                                <div class="input_cpf">
+                                    <input id="cliente_cpf"name="cliente_cpf" type="text" value=""/>
+                                </div>
+                            </div>
                             <div class="senha">
                                 <label>Senha</label>
                                 <div class="input_senha">   
-                                    <input type="password" value=""/>
+                                    <input id="cliente_senha" name="cliente_senha" type="password" value=""/>
                                 </div>
                             </div>
                             <div class="conf">
@@ -51,8 +58,8 @@
                             </div>
                             <div class="field email">
                                 <label>E-mail</label>
-                                <div class= "input_email">
-                                    <input type="text" value=""/>
+                                <div classe= "input_email">
+                                    <input id="cliente_email" name="cliente_email" type="text" value=""/>
                                 </div>
                             </div>
                             <div class="conf_email">
@@ -76,6 +83,6 @@
             </section>
             <script src="script/cadastro.js" type="text/javascript"></script
         </div>
-        <%@ include file = "footer.jsp" %>
+        <%@ include file = "/COMPONENTES/footer.jsp" %>
     </body>
 </html>

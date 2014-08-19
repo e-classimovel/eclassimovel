@@ -31,9 +31,9 @@
             </section>
             <nav style="clear: both">
                 <ul id="menu">
-                    <li><a href="./cadastro_cliente.jsp">Cadastro</a></li>
-                    <li><a href="./cadastro_imovel.jsp">Imoveis</a></li>
-                    <li><a href="./quem_somos.jsp">Quem somos</a></li>
+                    <li><a href="./PAGINAS/cadastro_cliente.jsp">Cadastro</a></li>
+                    <li><a href="./PAGINAS/cadastro_imovel.jsp">Imoveis</a></li>
+                    <li><a href="./PAGINAS/quem_somos.jsp">Quem somos</a></li>
                 </ul>
             </nav>
         </div>
