@@ -1,9 +1,9 @@
 <header>
     <div class='css'>
-        <link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>
-        <link href="./css/Site.css" rel="stylesheet" />
-        <link href="css/style5.css" rel="stylesheet" type="text/css"/>
-        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="/eclassimovel_web/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
+        <link href="/eclassimovel_web/css/Site.css" rel="stylesheet" />
+        <link href="/eclassimovel_web/css/style5.css" rel="stylesheet" type="text/css"/>
+        <link href="/eclassimovel_web/css/styles.css" rel="stylesheet" type="text/css"/>
     </div>
     
     <div class='scripts'>

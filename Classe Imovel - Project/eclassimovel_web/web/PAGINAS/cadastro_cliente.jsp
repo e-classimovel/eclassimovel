@@ -18,12 +18,12 @@
         <div id="body">
             <section class="content-wrapper main-content clear-fix" style="max-width: 100%;">
                 <div class="content-cadastro">
-                    <form role="form">
+                    <form role="form" action="/DAO_JSP/ClienteDAO/InserirCliente.jsp" >
                         <div class="field inline">
                             <div class= "nome">
                                 <label>Nome</label>
                                 <div class ="input_nome">
-                                    <input id="cliente_nome" name="cliente_nome" type="text" value="">
+                                    <input  name="cliente_nome" type="text" value="">
                                 </div>
                             </div>
                             <div class = "sobrenome">
