@@ -12,7 +12,7 @@
         <script src="script/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
         <script src="script/jquery-ui.min.js" type="text/javascript"></script>
     </div>
-    <nav class="navbar  navbar-default navbar-fixed-top" role="navigation" style="background-color:#009dd0; background: linear-gradient(to left, #009dd0 50%, #ffffff 50%);">
+    <nav class="navbar  navbar-default navbar-fixed-top" role="navigation" style="background-color:#000; background: linear-gradient(to left, #890213 50%, #890213 50%);">
   
     <div class="container">
     
@@ -23,18 +23,33 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html" style="height:80px; padding:0px;"><img src="./css/imagens/logo.jpg" width="120px"></a>
+            <a class="navbar-brand" href="PAGINAS/home.jsp" style="height:100px; padding:0px;"><img src="./css/imagens/logo.jpg" width="96px"></a>
         </div><!--navbar-header-->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
-                <li class="nav-quem-arredonda"><a href="quem-arredonda.html">QUEM ARREDONDA</a></li>
-                <li class="nav-mapa"><a href="mapa.html">MAPA</a></li>
-                <li class="nav-ranking"><a href="ranking.html">RANKING</a></li>
-                <li class="nav-financeiro"><a href="financeiro.html">FINANCEIRO</a></li>
-                <li class="nav-ongs"><a href="ongs.html">ONGS</a></li>
-          </ul>
+                <li class="nav-quem-arredonda"><a href="PAGINAS/cadastro_cliente.jsp">CADASTRA-SE</a></li>
+                <li class="nav-mapa"><a href="PAGINAS/cadastro_imovel.jsp">CADASTRAR IMÓVEL</a></li>
+                <li class="nav-ranking"><a href="PAGINAS/quem_somos.jsp">QUEM SOMOS</li>
+            </ul>
+            
+            <form class="form-inline" role="form" style="float:right; margin-top:1%;">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">@</div>
+                    <input class="form-control" type="email" placeholder="Enter email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputPassword2">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default">Sign in</button>
+        </form>
+            
         </div>
+        
     </div>
+    
 </nav>
     
 

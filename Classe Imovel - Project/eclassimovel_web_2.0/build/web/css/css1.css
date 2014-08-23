@@ -61,7 +61,7 @@ body{
 }
 
 .txt-branco{ color:#fff; }
-.txt-azul{ color:#009dd0; }
+.txt-azul{ color:#890213; }
 
 .txt-12{ font-size:12px; }
 .txt-16{ font-size:16px; }
@@ -93,7 +93,7 @@ h1{ font-family: "chalet_newyork", "Helvetica Neue", Helvetica, Arial, sans-seri
 
 h2{ font-family: "chalet_newyork", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-h3{ font-family: "chalet_newyork", "Helvetica Neue", Helvetica, Arial, sans-serif; color:#009dd0; font-weight:bold; }
+h3{ font-family: "chalet_newyork", "Helvetica Neue", Helvetica, Arial, sans-serif; color:#890213; font-weight:bold; }
 
 .h2-a{
 	float:left;
@@ -110,12 +110,12 @@ h3{ font-family: "chalet_newyork", "Helvetica Neue", Helvetica, Arial, sans-seri
 }
 
 .bg-verde{ background-color:#79ca37; }
-.bg-azul{ background-color:#009dd0; }
+.bg-azul{ background-color:#890213; }
 .bg-amarelo{ background-color:#ffcd00; }
 .bg-laranja{ background-color:#ff8200; }
 
 .border-verde{ border-color:#79ca37; }
-.border-azul{ border-color:#009dd0; }
+.border-azul{ border-color:#890213; }
 
 .box-6-col{
 	height:190px;
@@ -326,7 +326,7 @@ h3{ font-family: "chalet_newyork", "Helvetica Neue", Helvetica, Arial, sans-seri
 
 /* footer */
 #main-footer{
-	background-color:#009dd0;
+	background-color:#890213;
 	height:400px;
 	padding-top:30px;
 }
@@ -432,7 +432,7 @@ ul#kit-do-parceiro{
 .txt-nome-top3{ padding-left:70px; line-height:50px; width:60%; float:left; }
 .txt-valor-top3{ padding-right: 20px; line-height: 50px; width: 40%; float: right; }
 
-.h2-ongs-beneficiadas{ padding:10px 165px 0px 35px; margin:0px; font-size:14px; color:#009dd0; background:url(../images/ico-coracao.png) no-repeat 10px 10px; }
+.h2-ongs-beneficiadas{ padding:10px 165px 0px 35px; margin:0px; font-size:14px; color:#890213; background:url(../images/ico-coracao.png) no-repeat 10px 10px; }
 
 #triangulo-branco{
 	width:16px;
@@ -451,51 +451,6 @@ ul#kit-do-parceiro{
 
 .txt-nome-top3-b{ padding-left:70px; line-height:50px; width:80%; float:left; }
 .txt-valor-top3-b{ padding-right: 10px; line-height: 50px; width: 20%; float: left; text-align:right; }
-
-
-/* mapa */
-#ongs-atendidas{
-	font-size:14px;
-	float:left;
-	width:160px;
-	height:30px;
-	color:#009dd0;
-	padding-left:45px;
-	background:url(../images/ico-coracao-grande.png) no-repeat 0 0;
-	margin:0px 30px 0px 0px;
-}
-
-#lojas-que-estao-arredondando{
-	font-size:14px;
-	float:left;
-	width:260px;
-	height:30px;
-	color:#79ca37;
-	padding-left:45px;
-	background:url(../images/ico-arredondar.png) no-repeat 0 0;
-	margin:0px 0px 0px 0px;
-}
-
-#box-mapa-1{ height:600px; padding:0px; margin:0px; }
-
-#box-mapa-2{ background-color:#fff; min-height:200px; padding-top:20px; }
-
-/* ONG */
-#top-escolha-a-ong{
-	height:70px;
-	background-color:#79ca37;
-	margin-bottom:10px;
-}
-
-#top-placar-de-arrecadacao{
-	height:70px;
-	text-align:center;
-	line-height:40px;
-	color:#fff;
-	font-size:18px;
-	background-color:#009dd0;
-	margin-bottom:10px;
-}
 
 .triangulo-top-verde{
 	width:39px;
@@ -528,10 +483,10 @@ ul#kit-do-parceiro{
 }
 
 li#btn-assista-ao-video{ list-style-image:url(../images/ico-televisao.png); line-height:22px; margin-bottom:10px; }
-li#btn-assista-ao-video a{ color:#009dd0; }
+li#btn-assista-ao-video a{ color:#890213; }
 
 li#btn-ver-fotos{ list-style-image:url(../images/ico-fotos.png); line-height:22px; margin-bottom:10px; }
-li#btn-ver-fotos a{ color:#009dd0; }
+li#btn-ver-fotos a{ color:#890213; }
 
 li#btn-impactos{ list-style-image:url(../images/ico-impactos.png); line-height:22px; margin-bottom:10px; }
 li#btn-impactos a{ color:#79ca37; }
@@ -559,21 +514,6 @@ li#btn-transparencia a{ color:#79ca37; }
 	margin:0px 8px 8px 0px;
 }
 
-
-
-/* quem arredonda */
-
-.box-logos{
-	float:left;
-	margin:0px 10px 10px 0px;
-	width:180px;
-	height:180px;
-	background-position:0 0;
-	background-repeat:no-repeat;
-	background-size:cover;
-}
-
-
 /* financeiro */
 #conteudo-financeiro{ min-height:500px; }
 
@@ -581,12 +521,6 @@ li#btn-transparencia a{ color:#79ca37; }
 .nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:hover, .nav-tabs.nav-justified>.active>a:focus{ border:none !important; color:#fff; }
 .nav-tabs.nav-justified>li>a{ color:#5a5a5a; border-bottom:1px solid #79ca37; }
 
-#box-filtros-financeiro{
-	padding-left:50px;
-	/*min-height:170px;*/
-	background-color:#79ca37;
-	margin-top:-1px;
-}
 
 .triangulo-top-verde-financeiro{
 	width:39px;
@@ -607,7 +541,7 @@ li#btn-transparencia a{ color:#79ca37; }
 
 .table-header{
 	font-size:12px;
-	color:#009dd0;
+	color:#890213;
 	font-weight:bold;
 }
 
@@ -615,7 +549,7 @@ li#btn-transparencia a{ color:#79ca37; }
 .btn.bg-azul{ border:1px solid #009dd0; }
 .btn.bg-verde{ border:1px solid #79ca37; }
 
-nav .container{ position:relative; background-color:#009dd0; padding:0px !important; }
+nav .container{ position:relative; background-color:#890213; padding:0px !important; }
 
 .navbar-toggle{ margin-top:20px; }
 
