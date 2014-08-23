@@ -1,7 +1,7 @@
 <%-- 
     Document   : cadastro_cliente
     Created on : 25/04/2014, 01:26:54
-    Author     : Henrique Dias Bautis
+    Author     : Guilherme Dias Bautista
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,7 +14,7 @@
     </head>
     <body>
         <%@include file = "/COMPONENTES/header.jsp" %>
-        <%@include file = "/DAO_JSP/ClienteDAO/InserirCliente.jsp" %>
+        <%--<%@include file = "/DAO_JSP/ClienteDAO/InserirCliente.jsp" %>--%>
         <div id="body">
             <section class="content-wrapper main-content clear-fix" style="max-width: 100%;">
                 <div class="content-cadastro">
