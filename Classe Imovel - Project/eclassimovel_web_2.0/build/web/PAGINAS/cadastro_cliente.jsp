@@ -14,13 +14,18 @@
     </head>
     <body>
         <%@include file = "/COMPONENTES/header.jsp" %>
-        <%--<%@include file = "/DAO_JSP/ClienteDAO/InserirCliente.jsp" %>--%>
         <div id="body">
             <section class="content-wrapper main-content clear-fix" style="max-width: 100%;">
                 <div class="content-cadastro">
-                    <form role="form" class="form-horizontal" action="/DAO_JSP/ClienteDAO/InserirCliente.jsp" >
+                    <form class="form-horizontal" enctype="multipart/form-data" action="/eclassimovel_web/DAO_JSP2/InserirCliente.jsp" method="post">
                         <div>
                             <div class="col-sm-7">
+                                   <div class="form-group">
+                                        <label class="col-sm-2 control-label">Login</label>
+                                        <div class="col-sm-6">
+                                            <input class="form-control" name="cliente_login" type="text" value="">
+                                        </div>
+                                </div>
                                 <div class="form-group">
                                         <label class="col-sm-2 control-label">Nome</label>
                                         <div class="col-sm-6">
@@ -74,16 +79,17 @@
                                 <div class="content-cadastro-imagem" style="width: 324px; float: left;">
                                     <label>Selecione a imagem de perfil</label>
                                     <img class="img-upload" src="/" />
-                                    <input  class="btn-upload" type="file" value=""/>
+                                    <input  class="btn-upload" name="cliente_imagem" type="file" value=""/>
                                 </div>
+                            </div>
+                            
+                            <div class="content-buttons" style="clear:both">
+                                <input  type="submit" class="btn" value="Cadastrar"/>
                             </div>
                         </div>
                     </form>
                 </div>
                 
-                <div class="content-buttons" style="clear:both">
-                    <input  type="button" class="btn" value="Cadastrar"/>
-                </div>
             </section>
             <script src="script/cadastro.js" type="text/javascript"></script
         </div>

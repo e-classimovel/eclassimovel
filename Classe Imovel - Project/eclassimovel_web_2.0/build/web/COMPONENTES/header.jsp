@@ -4,6 +4,7 @@
          <link href="/eclassimovel_web/css/bootstrap-3.2.0-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="/eclassimovel_web/css/bootstrap-3.2.0-dist/js/bootstrap.js" rel="stylesheet"/>
         <link href="/eclassimovel_web/css/css1.css" rel="stylesheet" type="text/css"/>
+        <link href="/eclassimovel_web/css/site.css" rel="stylesheet" type="text/css"/>
     </div>
     
     <div class='scripts'>
@@ -27,9 +28,9 @@
         </div><!--navbar-header-->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
-                <li class="nav-quem-arredonda"><a href="PAGINAS/cadastro_cliente.jsp">CADASTRA-SE</a></li>
+                <li class="nav-quem-arredonda"><a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp">CADASTRA-SE</a></li>
                 <li class="nav-mapa"><a href="PAGINAS/cadastro_imovel.jsp">CADASTRAR IMÓVEL</a></li>
-                <li class="nav-ranking"><a href="PAGINAS/quem_somos.jsp">QUEM SOMOS</li>
+                <li class="nav-ranking"><a href="PAGINAS/quem_somos.jsp">QUEM SOMOS</a></li>
             </ul>
             
             <form class="form-inline" role="form" style="float:right; margin-top:1%;">
