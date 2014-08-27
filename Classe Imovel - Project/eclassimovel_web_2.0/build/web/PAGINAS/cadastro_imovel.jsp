@@ -17,7 +17,7 @@
         <div class="container">
              <div class="row">
                  
-                <form class="form-horizontal" role="form">
+                <form class="form-horizontal" enctype="multipart/form-data" role="form" method="post">
                     <div class ="col-sm-5">
                         <fieldset>
                             <legend>Endereço</legend>
@@ -26,25 +26,25 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Endereço</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" >  
+                                    <input type="text" name="imovel_endereco" class="form-control" >  
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Número</label>
                                 <div class="col-sm-9">
-                                    <input type="number" class="form-control" >  
+                                    <input type="number" name="imovel_numero" class="form-control" >  
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Complemento</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" >  
+                                    <input type="text" name="imovel_complemento" class="form-control" >  
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">CEP</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" >  
+                                    <input type="text" name="imovel_cep" class="form-control" >  
                                 </div>
                             </div>
                         </fieldset>
@@ -53,25 +53,25 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Qtd de Quartos</label>
                                 <div class="col-sm-9">
-                                    <input type="number" class="form-control" >  
+                                    <input type="number" name="imovel_qtdQuartos" class="form-control" >  
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Tamanho</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" >  
+                                    <input type="text" name="imovel_tamanho" class="form-control" >  
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Valor</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" >  
+                                    <input type="text" name="imovel_valor" class="form-control" >  
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Descrição</label>
                                 <div class="col-sm-9">
-                                    <textarea class="form-control" rows="3"></textarea>
+                                    <textarea class="form-control" name="imovel_descricao" rows="3"></textarea>
                                 </div>
                             </div>
                         </fieldset>
