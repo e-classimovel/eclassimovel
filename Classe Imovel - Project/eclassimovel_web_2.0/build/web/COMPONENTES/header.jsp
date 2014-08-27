@@ -8,10 +8,10 @@
     </div>
     
     <div class='scripts'>
-        <script src="script/script.js" type="text/javascript"></script>
-        <script src="script/jquery-1.10.2.js" type="text/javascript"></script>
-        <script src="script/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
-        <script src="script/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="/eclassimovel_web/script/script.js" type="text/javascript"></script>
+        <script src="/eclassimovel_web/script/jquery-1.10.2.js" type="text/javascript"></script>
+        <script src="/eclassimovel_web/script/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
+        <script src="/eclassimovel_web/script/jquery-ui.min.js" type="text/javascript"></script>
     </div>
     <nav class="navbar  navbar-default navbar-fixed-top" role="navigation" style="background-color:#000; background: linear-gradient(to left, #890213 50%, #890213 50%);">
   
@@ -24,13 +24,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="PAGINAS/home.jsp" style="height:100px; padding:0px;"><img src="./css/imagens/logo.jpg" width="96px"></a>
+            <a class="navbar-brand" href="/eclassimovel_web/PAGINAS/home.jsp" style="height:100px; padding:0px;"><img src="/eclassimovel_web/css/imagens/logo.jpg" width="96px"></a>
         </div><!--navbar-header-->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
                 <li class="nav-quem-arredonda"><a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp">CADASTRA-SE</a></li>
-                <li class="nav-mapa"><a href="PAGINAS/cadastro_imovel.jsp">CADASTRAR IMÓVEL</a></li>
-                <li class="nav-ranking"><a href="PAGINAS/quem_somos.jsp">QUEM SOMOS</a></li>
+                <li class="nav-mapa"><a href="/eclassimovel_web/PAGINAS/cadastro_imovel.jsp">CADASTRAR IMÓVEL</a></li>
+                <li class="nav-ranking"><a href="/eclassimovel_web/PAGINAS/quem_somos.jsp">QUEM SOMOS</a></li>
             </ul>
             
             <form class="form-inline" role="form" style="float:right; margin-top:1%;">

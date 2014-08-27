@@ -53,7 +53,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Senha</label>
                                     <div class="col-sm-6">
-                                        <input class="form-control" name="cliente_senha" type="password" value=""/>
+                                        <input class="form-control" name="cliente_senha" type="password" />
                                     </div>
                                 </div>
                                 <div class="form-group">
