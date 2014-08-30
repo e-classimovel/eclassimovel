@@ -33,16 +33,16 @@
                 <li class="nav-ranking"><a href="/eclassimovel_web/PAGINAS/quem_somos.jsp">QUEM SOMOS</a></li>
             </ul>
             
-            <form class="form-inline" role="form" style="float:right; margin-top:1%;">
+            <form class="form-inline" method="POST" action="login.jsp" role="form" style="float:right; margin-top:1%;">
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-addon">@</div>
-                    <input class="form-control" type="email" placeholder="Enter email">
+                    <input class="form-control" name="login" type="email" placeholder="Enter email">
                 </div>
             </div>
             <div class="form-group">
                 <label class="sr-only" for="exampleInputPassword2">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                <input type="password" name="senha" class="form-control" id="exampleInputPassword2" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-default">Sign in</button>
         </form>
