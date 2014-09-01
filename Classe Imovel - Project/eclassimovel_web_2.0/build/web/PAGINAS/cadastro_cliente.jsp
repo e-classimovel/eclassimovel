@@ -14,22 +14,25 @@
     </head>
     <body>
         <%@include file = "/COMPONENTES/header.jsp" %>
+        <%@include file = "/DAO_JSP2/editar_cliente.jsp" %>
+        
         <div id="body">
             <section class="content-wrapper main-content clear-fix" style="max-width: 100%;">
                 <div class="content-cadastro">
                     <form class="form-horizontal" enctype="multipart/form-data" action="/eclassimovel_web/DAO_JSP2/InserirCliente.jsp" method="post">
                         <div>
+                            <input type="hidden" name="id" value="<%=id%>" />
                             <div class="col-sm-7">
                                    <div class="form-group">
                                         <label class="col-sm-2 control-label">Login</label>
                                         <div class="col-sm-6">
-                                            <input class="form-control" name="cliente_login" type="text" value="">
+                                            <input class="form-control" name="cliente_login" type="text" value="<%=login%>">
                                         </div>
                                 </div>
                                 <div class="form-group">
                                         <label class="col-sm-2 control-label">Nome</label>
                                         <div class="col-sm-6">
-                                            <input class="form-control" name="cliente_nome" type="text" value="">
+                                            <input class="form-control" name="cliente_nome" type="text" value="<%=nome%>">
                                         </div>
                                 </div>
                                 <div class="form-group">
@@ -41,13 +44,13 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Data de Nascimento</label>
                                     <div class="col-sm-6">
-                                        <input class="form-control" name="cliente_dtNascimento" type="date" value=""/>
+                                        <input class="form-control" name="cliente_dtNascimento" type="date" value="<%=dtNascimento%>"/>
                                     </div>
                                 </div>  
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label"> CPF</label>
                                     <div class="col-sm-6">
-                                        <input class="form-control" name="cliente_cpf" type="text" value=""/>
+                                        <input class="form-control" name="cliente_cpf" type="text" value="<%=cpf%>"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -65,7 +68,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">E-mail</label>
                                     <div class="col-sm-6">
-                                        <input class="form-control" name="cliente_email" type="text" value=""/>
+                                        <input class="form-control" name="cliente_email" type="text" value="<%=email%>"/>
                                     </div>
                                 </div>
                                 <div class="form-group">

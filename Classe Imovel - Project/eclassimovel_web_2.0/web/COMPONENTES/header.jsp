@@ -28,24 +28,34 @@
         </div><!--navbar-header-->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
-                <li class="nav-quem-arredonda"><a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp">CADASTRA-SE</a></li>
+                <li class="nav-quem-arredonda"><a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp">${ id == null  ? "CADASTRAR-SE" : "EDITAR" }</a></li>
                 <li class="nav-mapa"><a href="/eclassimovel_web/PAGINAS/cadastro_imovel.jsp">CADASTRAR IMÓVEL</a></li>
                 <li class="nav-ranking"><a href="/eclassimovel_web/PAGINAS/quem_somos.jsp">QUEM SOMOS</a></li>
             </ul>
             
-            <form class="form-inline" method="POST" action="login.jsp" role="form" style="float:right; margin-top:1%;">
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-addon">@</div>
-                    <input class="form-control" name="login" type="email" placeholder="Enter email">
+            <% if (session.getAttribute("id") == null) {%>
+                <form class="form-inline" method="POST" action="/eclassimovel_web/DAO_JSP2/login.jsp" role="form" style="float:right; margin-top:1%;">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">@</div>
+                            <input class="form-control" name="login" type="text" placeholder="Enter email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">Senha</label>
+                        <input type="password" name="senha" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-default">Logar</button>
+
+                </form>
+            <% }
+            else {%>
+                <div class="form-group">
+                    Bem vindo ${nome_user}
+                    <a href="/eclassimovel_web/DAO_JSP2/logout.jsp" >Deslogar</a>
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="sr-only" for="exampleInputPassword2">Password</label>
-                <input type="password" name="senha" class="form-control" id="exampleInputPassword2" placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-default">Sign in</button>
-        </form>
+            <% } %>
+            
             
         </div>
         

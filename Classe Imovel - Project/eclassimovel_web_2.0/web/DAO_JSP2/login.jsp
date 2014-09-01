@@ -10,19 +10,26 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% 
-    String login_form = request.getParameter("login");
-    String senha_form = request.getParameter("senha");
+    String login = request.getParameter("login");
+    String senha = request.getParameter("senha");
 
     
-    rs = statement.executeQuery("SELECT * FROM Tb_Cliente WHERE login ='"+login_form+"' AND senha ='"+senha_form+"'");
-    rs.next();
-    int qtd = rs.getInt(1);
-    if(qtd>0){
-        session.setAttribute( "user", rs.getString("usuario_login"));
-        session.setAttribute( "id", rs.getInt("usuario_id"));
-        session.setAttribute( "nome_user", rs.getString("usuario_nome"));
-        String site = new String("boas.jsp");
+    ResultSet result  = statement.executeQuery("SELECT * FROM Tb_Cliente WHERE login ='" + login + "' AND senha ='" + senha + "'");
+    result.next();
+    
+    if (result.first()) {
+        session.setAttribute( "user", result.getString("login"));
+        session.setAttribute( "id", result.getInt("id"));
+        session.setAttribute( "nome_user", result.getString("nome"));
+        String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
         response.setStatus(response.SC_MOVED_TEMPORARILY);
-        response.setHeader("Location", site);
+        response.setHeader("Location", redirectPage);
+    }
+    else
+    {
+        String redirectPage = new String("/eclassimovel_web/PAGINAS/login.jsp");
+        response.setStatus(response.SC_MOVED_TEMPORARILY);
+        response.setHeader("Location", redirectPage);        
     }
 %>
+
