@@ -2,7 +2,7 @@
     <div class='css'>
         <link href="/eclassimovel_web/css/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
          <link href="/eclassimovel_web/css/bootstrap-3.2.0-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="/eclassimovel_web/css/bootstrap-3.2.0-dist/js/bootstrap.js" rel="stylesheet"/>
+        
         <link href="/eclassimovel_web/css/css1.css" rel="stylesheet" type="text/css"/>
         <link href="/eclassimovel_web/css/site.css" rel="stylesheet" type="text/css"/>
     </div>
@@ -10,8 +10,7 @@
     <div class='scripts'>
         <script src="/eclassimovel_web/script/script.js" type="text/javascript"></script>
         <script src="/eclassimovel_web/script/jquery-1.10.2.js" type="text/javascript"></script>
-        <script src="/eclassimovel_web/script/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
-        <script src="/eclassimovel_web/script/jquery-ui.min.js" type="text/javascript"></script>
+        <link href="/eclassimovel_web/css/bootstrap-3.2.0-dist/js/bootstrap.js" rel="stylesheet"/>
     </div>
     <nav class="navbar  navbar-default navbar-fixed-top" role="navigation" style="background-color:#000; background: linear-gradient(to left, #890213 50%, #890213 50%);">
   
@@ -53,6 +52,7 @@
                 <div class="form-group">
                     Bem vindo ${nome_user}
                     <a href="/eclassimovel_web/DAO_JSP2/logout.jsp" >Deslogar</a>
+                    <a href="https://docs.google.com/a/visie.com.br/document/d/1OvVpvyvqfpcr-V11ENEx_b9qxUv9lOacxCNO-AdK4Oc/edit"> ajuda</a>
                 </div>
             <% } %>
             

@@ -18,11 +18,10 @@
                     </div>
                     <div class="form-group">
                         <label class="col-sm-5 control-label">Tipo de Imóveis</label>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6">                            
                             <select class="form-control">
-                                <option class="form-control" >Apartamento</option>
-                                <option class="form-control">Case</option>
-                                <option class="form-control">Chacará</option>
+                                <option class="form-control" >Comercial</option>
+                                <option class="form-control">Residencial</option>
                             </select>
                         </div>
                     </div>

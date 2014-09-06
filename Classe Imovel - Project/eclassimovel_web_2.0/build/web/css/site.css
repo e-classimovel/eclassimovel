@@ -11,3 +11,12 @@ and open the template in the editor.
 header {
     height: 110px;
 }
+
+.form-horizontal .form-group select {
+    width: 100% !important;
+}
+
+.content .img-rounded {
+    width: 100%;
+    min-height: 180px;
+}

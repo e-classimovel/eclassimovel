@@ -12,7 +12,6 @@
 <% 
     String login = request.getParameter("login");
     String senha = request.getParameter("senha");
-
     
     ResultSet result  = statement.executeQuery("SELECT * FROM Tb_Cliente WHERE login ='" + login + "' AND senha ='" + senha + "'");
     result.next();

@@ -25,8 +25,7 @@
     
     String sqlQuery = "INSERT INTO Tb_Cliente (login,nome,senha,dataNascimento,cpf,email,dtInclusao) VALUES ('%s','%s','%s','%s','%s','%s','%s')";
     
-    if (clienteId != "")
-        sqlQuery = "UPDATE Tb_Cliente SET login = '%s',nome = '%s',senha = '%s',dataNascimento = '%s',cpf = '%s',email = '%s',dtInclusao = '%s' WHERE id ='" + clienteId + "'";
+    
         
     sqlQuery = String.format(sqlQuery, clienteLogin, clienteNome, clienteSenha, clienteDtNascimento, clienteCpf, clienteEmail, clienteDtInclusao);
         

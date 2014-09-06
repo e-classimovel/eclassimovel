@@ -56,7 +56,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Senha</label>
                                     <div class="col-sm-6">
-                                        <input class="form-control" name="cliente_senha" type="password" />
+                                        <input class="form-control" name="cliente_senha" type="password" value ="<%=senha%>" />
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -81,7 +81,7 @@
                             <div class="col-sm-5">
                                 <div class="content-cadastro-imagem" style="width: 324px; float: left;">
                                     <label>Selecione a imagem de perfil</label>
-                                    <img class="img-upload" src="/" />
+                                    <img class="img-upload" src="/" style="max-width:400px" />
                                     <input  class="btn-upload" name="cliente_imagem" type="file" value=""/>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@
                 </div>
                 
             </section>
-            <script src="script/cadastro.js" type="text/javascript"></script
+            <script src="/eclassimovel_web/script/cadastro.js" type="text/javascript"></script
         </div>
         <%@ include file = "/COMPONENTES/footer.jsp" %>
     </body>

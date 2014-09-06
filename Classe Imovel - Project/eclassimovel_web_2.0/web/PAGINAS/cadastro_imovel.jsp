@@ -74,6 +74,13 @@
                                     <textarea class="form-control" name="imovel_descricao" rows="3"></textarea>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Descrição</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" name="imovel_descricao" rows="3"></textarea>
+                                </div>
+                            </div>
+                            
                         </fieldset>
                     </div>
                     <div class="col-sm-7">
