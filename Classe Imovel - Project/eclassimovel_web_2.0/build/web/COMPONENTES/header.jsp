@@ -49,8 +49,9 @@
                 </form>
             <% }
             else {%>
-                <div class="form-group">
-                    Bem vindo ${nome_user}
+                <div class="form-group" style="float:right; color:#fff;">
+                    Bem vindo ${nome_user},
+
                     <a href="/eclassimovel_web/DAO_JSP2/logout.jsp" >Deslogar</a>
                     <a href="https://docs.google.com/a/visie.com.br/document/d/1OvVpvyvqfpcr-V11ENEx_b9qxUv9lOacxCNO-AdK4Oc/edit"> ajuda</a>
                 </div>

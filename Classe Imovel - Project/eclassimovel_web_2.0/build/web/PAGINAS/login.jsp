@@ -16,7 +16,7 @@
         <form class="form-horizontal" enctype="multipart/form-data" action="/eclassimovel_web/DAO_JSP2/login.jsp" method="post">
             <div class="form-group">
                 <label class="col-sm-2 control-label">Login</label>
-                <input value="" name="login"/>
+                <input value="" name="email"/>
             </div>
              <div class="form-group">
                 <label class="col-sm-2 control-label">Senha</label>

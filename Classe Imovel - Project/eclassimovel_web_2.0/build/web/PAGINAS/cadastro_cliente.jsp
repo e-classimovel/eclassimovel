@@ -23,12 +23,7 @@
                         <div>
                             <input type="hidden" name="id" value="<%=id%>" />
                             <div class="col-sm-7">
-                                   <div class="form-group">
-                                        <label class="col-sm-2 control-label">Login</label>
-                                        <div class="col-sm-6">
-                                            <input class="form-control" name="cliente_login" type="text" value="<%=login%>">
-                                        </div>
-                                </div>
+                                   
                                 <div class="form-group">
                                         <label class="col-sm-2 control-label">Nome</label>
                                         <div class="col-sm-6">
@@ -46,7 +41,13 @@
                                     <div class="col-sm-6">
                                         <input class="form-control" name="cliente_dtNascimento" type="date" value="<%=dtNascimento%>"/>
                                     </div>
-                                </div>  
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label"> RG</label>
+                                    <div class="col-sm-6">
+                                        <input class="form-control" name="cliente_rg" type="text" value=""/>
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label"> CPF</label>
                                     <div class="col-sm-6">

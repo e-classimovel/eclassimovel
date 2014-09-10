@@ -17,17 +17,17 @@
     String clienteId = request.getParameter("id");  
     String clienteNome = request.getParameter("cliente_nome");    
     String clienteCpf = request.getParameter("cliente_cpf");
+    String clienteRg = request.getParameter("cliente_rg");
     String clienteEmail = request.getParameter("cliente_email");
-    String clienteLogin = request.getParameter("cliente_login");
     String clienteSenha = request.getParameter("cliente_senha");
     String clienteDtNascimento = request.getParameter("cliente_dtNascimento");
     String clienteDtInclusao = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
     
-    String sqlQuery = "INSERT INTO Tb_Cliente (login,nome,senha,dataNascimento,cpf,email,dtInclusao) VALUES ('%s','%s','%s','%s','%s','%s','%s')";
+    String sqlQuery = "INSERT INTO Tb_Cliente (nome,senha,dataNascimento,cpf,rg,email,dtInclusao) VALUES ('%s','%s','%s','%s','%s','%s','%s')";
     
     
         
-    sqlQuery = String.format(sqlQuery, clienteLogin, clienteNome, clienteSenha, clienteDtNascimento, clienteCpf, clienteEmail, clienteDtInclusao);
+    sqlQuery = String.format(sqlQuery, clienteNome, clienteSenha, clienteDtNascimento, clienteCpf, clienteRg, clienteEmail, clienteDtInclusao);
         
     //Salvar Imagem
 

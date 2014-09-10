@@ -10,14 +10,14 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% 
-    String login = request.getParameter("login");
+    String email = request.getParameter("email");
     String senha = request.getParameter("senha");
     
-    ResultSet result  = statement.executeQuery("SELECT * FROM Tb_Cliente WHERE login ='" + login + "' AND senha ='" + senha + "'");
+    ResultSet result  = statement.executeQuery("SELECT * FROM Tb_Cliente WHERE email ='" + email + "' AND senha ='" + senha + "'");
     result.next();
     
     if (result.first()) {
-        session.setAttribute( "user", result.getString("login"));
+        session.setAttribute( "user", result.getString("email"));
         session.setAttribute( "id", result.getInt("id"));
         session.setAttribute( "nome_user", result.getString("nome"));
         String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
