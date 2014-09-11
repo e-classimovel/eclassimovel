@@ -39,19 +39,19 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Data de Nascimento</label>
                                     <div class="col-sm-6">
-                                        <input class="form-control" name="cliente_dtNascimento" type="date" value="<%=dtNascimento%>"/>
+                                        <input class="form-control data" name="cliente_dtNascimento" type="date" value="<%=dtNascimento%>"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label"> RG</label>
                                     <div class="col-sm-6">
-                                        <input class="form-control" name="cliente_rg" type="text" value=""/>
+                                        <input class="form-control rg" name="cliente_rg" type="text" value=""/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label"> CPF</label>
                                     <div class="col-sm-6">
-                                        <input class="form-control" name="cliente_cpf" type="text" value="<%=cpf%>"/>
+                                        <input class="form-control cpf" name="cliente_cpf" type="text" value="<%=cpf%>"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -69,7 +69,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">E-mail</label>
                                     <div class="col-sm-6">
-                                        <input class="form-control" name="cliente_email" type="text" value="<%=email%>"/>
+                                        <input class="form-control" name="cliente_email" type="email" value="<%=email%>"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
