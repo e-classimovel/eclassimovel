@@ -74,13 +74,64 @@
                                     <textarea class="form-control" name="imovel_descricao" rows="3"></textarea>
                                 </div>
                             </div>
+                                                       
+                        </fieldset>
+                        <fieldset>
+                            <legend>Tipo do Imóvel</legend>
+                            
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">Descrição</label>
+                                <label class="col-sm-3 control-label">Tipo do Imóvel</label>
                                 <div class="col-sm-9">
-                                    <textarea class="form-control" name="imovel_descricao" rows="3"></textarea>
+                                    <select id="tipo" name="tipo_imovel" class="form-control">
+                                        <option value="residencial">Residencial</option>
+                                        <option value="comercial">Comercial</option> 
+                                    </select>                                    
                                 </div>
                             </div>
-                            
+                            <div class="espcificacao_comercial" style="display: None;">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Especificação do Imovel</label>
+                                    <div class="col-sm-9">
+                                        <select id="comercial" name="especificacao" class="form-control">
+                                            <option value="box/garagem">Box/Garagem</option>
+                                            <option value="casa_comercial">Casa Comercial</option>
+                                            <option value="conjunto_comercial/sala">Conjunto Comercial/Sala</option>
+                                            <option value="galpa/deposito/armazen">Galpão/Depósito/Armazém</option>
+                                            <option value="hotel">Hotel</option>
+                                            <option value="industria">Industria</option>
+                                            <option value="loja_shopping/ct_comercial">Loja Shopping/Ct Comercial</option>
+                                            <option value="loja/salao">Loja/Salao</option>
+                                            <option value="motel">Motel</option>
+                                            <option value="pousada/chale">Pousada/Chalé</option>
+                                            <option value="predio_inteiro">Prédio Inteiro</option>
+                                            <option value="studio">Studio</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="espcificacao_residencial" style="display: None;">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Especificação do Imovel</label>
+                                    <div class="col-sm-9">
+                                        <select id="residencial" name="especificacao" class="form-control">
+                                            <option value="apartamento_padrao">Apartamento Padrão</option>
+                                            <option value="cobertura">Cobertura</option>
+                                            <option value="kichenette/conjugados">Kichenette/Conjugados</option>
+                                            <option value="loft">Loft</option>
+                                            <option value="casa_condominio">Casa de Condomínio</option>
+                                            <option value="casa_vila">Casa de Vila</option>
+                                            <option value="casa_padrao">Casa Padrao</option>
+                                            <option value="loteamento/condominio">Loteamento/Condomínio</option>
+                                            <option value="terreno_padrao">Terreno Padrão</option>
+                                            <option value="chacara">Chácara</option>
+                                            <option value="fazendo">Fazenda</option>
+                                            <option value="haras">Haras</option>
+                                            <option value="sitio">Sitio</option>
+                                            <option value="flat">Flat</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                         </fieldset>
                     </div>
                     <div class="col-sm-7">
@@ -119,5 +170,12 @@
         <%@include file = "/COMPONENTES/footer.jsp" %>
         <script src="script/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
         <script src="script/jquery-1.10.2.js" type="text/javascript"></script>
+        <script>
+            $("#tipo").change(function(){
+                if ($("#tipo").val()=="comercial"){
+                    $("#comercial").css('display','block');
+                }
+            })
+        </script>
     </body>
 </html>
