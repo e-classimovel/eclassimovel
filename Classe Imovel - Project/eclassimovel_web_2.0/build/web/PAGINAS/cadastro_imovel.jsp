@@ -170,12 +170,16 @@
         <%@include file = "/COMPONENTES/footer.jsp" %>
         <script src="script/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
         <script src="script/jquery-1.10.2.js" type="text/javascript"></script>
+        
         <script>
             $("#tipo").change(function(){
                 if ($("#tipo").val()=="comercial"){
-                    $("#comercial").css('display','block');
+                    $(".espcificacao_comercial").css("display","block");
+                }else{
+                    $(".espcificacao_residencial").css("display","block");                    
                 }
             })
         </script>
+        
     </body>
 </html>
