@@ -68,6 +68,36 @@
                                     <input type="text" name="imovel_valor" class="form-control" >  
                                 </div>
                             </div>
+                             <div class="form-group">
+                                <label class="col-sm-3 control-label">Area Util</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" name="area_util" >
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label class="col-sm-3 control-label">Vagas na Garagem</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" name="vagas_garagem" >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="mostrar_mapa" type="checkbox"> Mostrar meu imóvel no Google Maps
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="permuta" type="checkbox"> Aceita Permuta
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Descrição</label>
                                 <div class="col-sm-9">
@@ -175,8 +205,11 @@
             $("#tipo").change(function(){
                 if ($("#tipo").val()=="comercial"){
                     $(".espcificacao_comercial").css("display","block");
+                    $(".espcificacao_residencial").css("display","none");
+                    
                 }else{
-                    $(".espcificacao_residencial").css("display","block");                    
+                    $(".espcificacao_residencial").css("display","block");
+                    $(".espcificacao_comercial").css("display","none");  
                 }
             })
         </script>
