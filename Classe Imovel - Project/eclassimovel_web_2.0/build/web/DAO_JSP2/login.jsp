@@ -4,9 +4,6 @@
     Author     : guilhermediasbautista
 --%>
 <%@ include file="/DAO_JSP2/conexao.jsp" %>
-<%@page import="java.io.InputStream"%>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Calendar"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% 

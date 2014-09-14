@@ -13,21 +13,45 @@
 <%@ include file="/DAO_JSP2/conexao.jsp" %>
 
 <%
-String imovel_endereco = request.getParameter("imovel_endereco");
-String imovel_numero = request.getParameter("imovel_numero");
-String imovel_cep = request.getParameter("imovel_cep");
-String imovel_complemento = request.getParameter("imovel_complemento"); 
-String imovel_qtdQuartos = request.getParameter("imovel_qtdQuartos");
-String imovel_tamanho = request.getParameter("imovel_tamanho");
-String imovel_valor = request.getParameter("imovel_valor");
-String imovel_descricao = request.getParameter("imovel_descricao");
+    String endereco = request.getParameter("imovel_endereco");
+    String idTipoImovel = request.getParameter("imovel_tipo_imovel");
+    String tamanho = request.getParameter("imovel_tamanho");
+    String valor = request.getParameter("imovel_valor").toString(); 
+    String qtdQuartos = request.getParameter("imovel_qtdQuartos");//
+    String qtdVagas = request.getParameter("imovel_vagas_garagem");
+    String areaUtil = request.getParameter("imovel_area_util");
+    String descricao = request.getParameter("imovel_descricao");
+    String dtinclusao = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+    
+    String permuta = request.getParameter("imovel_permuta") == null ? "0" : "1";
+    String mostrarGmaps = request.getParameter("imovel_mostrar_mapa") == null ? "0" : "1";
+    
+    String especificaoImovel = request.getParameter("imovel_especificacao");
 
-String sqlQuery = "INSERT ...";
+         
+    String sqlQuery = "INSERT INTO Tb_Imovel (endereco, idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao)"
+                    + " VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
 
-PreparedStatement st = connection.prepareStatement(sqlQuery);
-st.executeUpdate();
-String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
-response.setStatus(response.SC_MOVED_TEMPORARILY);
-response.setHeader("Location", redirectPage); 
-statement.close();
+    sqlQuery =  String.format(
+                    sqlQuery, 
+                    endereco, 
+                    idTipoImovel, 
+                    tamanho, 
+                    valor, 
+                    qtdQuartos, 
+                    qtdVagas,
+                    areaUtil,
+                    descricao,
+                    permuta,
+                    mostrarGmaps,
+                    especificaoImovel,
+                    dtinclusao
+                );
+    
+    PreparedStatement st = connection.prepareStatement(sqlQuery);
+    st.executeUpdate();
+    String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
+    response.setStatus(response.SC_MOVED_TEMPORARILY);
+    response.setHeader("Location", redirectPage); 
+    statement.close();
 %>

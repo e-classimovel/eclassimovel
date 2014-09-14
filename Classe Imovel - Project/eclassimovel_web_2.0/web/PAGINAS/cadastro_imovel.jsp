@@ -17,7 +17,7 @@
         <div class="container">
              <div class="row">
                  
-                <form class="form-horizontal" enctype="multipart/form-data" role="form" method="post">
+                <form  action="/eclassimovel_web/DAO_JSP2/InserirImovel.jsp" class="form-horizontal" enctype="multipart/form-data" role="form" method="post">
                     <div class ="col-sm-5">
                         <fieldset>
                             <legend>Endereço</legend>
@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">Complemento</label>
+                                <label class="col-sm-3 con trol-label">Complemento</label>
                                 <div class="col-sm-9">
                                     <input type="text" name="imovel_complemento" class="form-control" >  
                                 </div>
@@ -44,7 +44,7 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">CEP</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="imovel_cep" class="form-control" >  
+                                    <input type="text" name="imovel_cep" class="form-control cep" >  
                                 </div>
                             </div>
                         </fieldset>
@@ -71,20 +71,20 @@
                              <div class="form-group">
                                 <label class="col-sm-3 control-label">Area Util</label>
                                 <div class="col-sm-9">
-                                    <input class="form-control" name="area_util" >
+                                    <input class="form-control" name="imovel_area_util" >
                                 </div>
                             </div>
                              <div class="form-group">
                                 <label class="col-sm-3 control-label">Vagas na Garagem</label>
                                 <div class="col-sm-9">
-                                    <input class="form-control" name="vagas_garagem" >
+                                    <input class="form-control" name="imovel_vagas_garagem" >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-9">
                                     <div class="checkbox">
                                         <label>
-                                            <input name="mostrar_mapa" type="checkbox"> Mostrar meu imóvel no Google Maps
+                                            <input name="imovel_mostrar_mapa" type="checkbox"> Mostrar meu imóvel no Google Maps
                                         </label>
                                     </div>
                                 </div>
@@ -93,7 +93,7 @@
                                 <div class="col-sm-offset-3 col-sm-9">
                                     <div class="checkbox">
                                         <label>
-                                            <input name="permuta" type="checkbox"> Aceita Permuta
+                                            <input name="imovel_permuta" type="checkbox"> Aceita Permuta
                                         </label>
                                     </div>
                                 </div>
@@ -112,17 +112,17 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Tipo do Imóvel</label>
                                 <div class="col-sm-9">
-                                    <select id="tipo" name="tipo_imovel" class="form-control">
-                                        <option value="residencial">Residencial</option>
-                                        <option value="comercial">Comercial</option> 
-                                    </select>                                    
+                                    <select id="tipo" name="imovel_tipo_imovel" class="form-control">
+                                        <option value="1">Residencial</option>
+                                        <option value="2">Comercial</option> 
+                                    </select>                                     
                                 </div>
                             </div>
                             <div class="espcificacao_comercial" style="display: None;">
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Especificação do Imovel</label>
                                     <div class="col-sm-9">
-                                        <select id="comercial" name="especificacao" class="form-control">
+                                        <select id="comercial" name="imovel_especificacao" class="form-control">
                                             <option value="box/garagem">Box/Garagem</option>
                                             <option value="casa_comercial">Casa Comercial</option>
                                             <option value="conjunto_comercial/sala">Conjunto Comercial/Sala</option>
@@ -191,6 +191,9 @@
                             </div>
                         </div>
                     </div>
+                            <div class="content-buttons" style="clear:both">
+                                <input  type="submit" class="btn" value="Cadastrar"/>
+                            </div>
                 </form>
 
             </div>
