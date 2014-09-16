@@ -11,7 +11,7 @@
         <script src="/eclassimovel_web/script/script.js" type="text/javascript"></script>
         <script src="/eclassimovel_web/script/jquery-1.10.2.js" type="text/javascript"></script>
         <script src="/eclassimovel_web/script/jquery.mask.min.js" type="text/javascript"></script>
-        <script src="/eclassimovel_web/script/site-mask-**-*--.js" type="text/javascript"></script>
+        <script src="/eclassimovel_web/script/site-mask.js" type="text/javascript"></script>
         <link href="/eclassimovel_web/css/bootstrap-3.2.0-dist/js/bootstrap.js" rel="stylesheet"/>
     </div>
     <nav class="navbar  navbar-default navbar-fixed-top" role="navigation" style="background-color:#000; background: linear-gradient(to left, #890213 50%, #890213 50%);">
@@ -41,7 +41,7 @@
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon">@</div>
-                            <input class="form-control" name="login" type="text" placeholder="Enter email">
+                            <input class="form-control" name="email" type="text" placeholder="Enter email">
                         </div>
                     </div>
                     <div class="form-group">

@@ -19,13 +19,7 @@
                 <div class="content-cadastro">
                     <form class="form-horizontal" enctype="multipart/form-data" action="/eclassimovel_web/DAO_JSP2/InserirCliente.jsp" method="post">
                         <div>
-                            <div class="col-sm-7">
-                                   <div class="form-group">
-                                        <label class="col-sm-2 control-label">Login</label>
-                                        <div class="col-sm-6">
-                                            <input class="form-control" name="cliente_login" type="text" value="">
-                                        </div>
-                                </div>
+                            <div class="col-sm-7">                                  
                                 <div class="form-group">
                                         <label class="col-sm-2 control-label">Nome</label>
                                         <div class="col-sm-6">

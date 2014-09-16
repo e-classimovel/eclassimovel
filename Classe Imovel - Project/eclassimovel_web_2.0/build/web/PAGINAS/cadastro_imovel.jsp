@@ -17,7 +17,7 @@
         <div class="container">
              <div class="row">
                  
-                <form class="form-horizontal" enctype="multipart/form-data" role="form" method="post">
+                <form class="form-horizontal" action="/eclassimovel_web/DAO_JSP2/InserirImovel.jsp" enctype="multipart/form-data" role="form" method="post">
                     <div class ="col-sm-5">
                         <fieldset>
                             <legend>Endereço</legend>
@@ -44,7 +44,7 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">CEP</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="imovel_cep" class="form-control" >  
+                                    <input type="text" name="imovel_cep" class="form-control cep" >  
                                 </div>
                             </div>
                         </fieldset>
@@ -113,8 +113,8 @@
                                 <label class="col-sm-3 control-label">Tipo do Imóvel</label>
                                 <div class="col-sm-9">
                                     <select id="tipo" name="tipo_imovel" class="form-control">
-                                        <option value="residencial">Residencial</option>
-                                        <option value="comercial">Comercial</option> 
+                                        <option value="1">Residencial</option>
+                                        <option value="2">Comercial</option> 
                                     </select>                                    
                                 </div>
                             </div>
@@ -190,6 +190,9 @@
                                 <img class='img-box' src='./css/imagens/imovel1.jpg'>
                             </div>
                         </div>
+                    </div>
+                    <div class="content-buttons" style="clear:both">
+                        <input  type="submit" class="btn" value="Cadastrar"/>
                     </div>
                 </form>
 
