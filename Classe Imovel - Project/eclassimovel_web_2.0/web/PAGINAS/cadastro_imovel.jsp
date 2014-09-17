@@ -17,7 +17,11 @@
         <div class="container">
              <div class="row">
                  
+<<<<<<< HEAD
                 <form  action="/eclassimovel_web/DAO_JSP2/InserirImovel.jsp" class="form-horizontal" enctype="multipart/form-data" role="form" method="post">
+=======
+                <form class="form-horizontal" action="/eclassimovel_web/DAO_JSP2/InserirImovel.jsp" enctype="multipart/form-data" role="form" method="post">
+>>>>>>> origin/dev
                     <div class ="col-sm-5">
                         <fieldset>
                             <legend>Endereço</legend>
@@ -112,10 +116,17 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Tipo do Imóvel</label>
                                 <div class="col-sm-9">
+<<<<<<< HEAD
                                     <select id="tipo" name="imovel_tipo_imovel" class="form-control">
                                         <option value="1">Residencial</option>
                                         <option value="2">Comercial</option> 
                                     </select>                                     
+=======
+                                    <select id="tipo" name="tipo_imovel" class="form-control">
+                                        <option value="1">Residencial</option>
+                                        <option value="2">Comercial</option> 
+                                    </select>                                    
+>>>>>>> origin/dev
                                 </div>
                             </div>
                             <div class="espcificacao_comercial" style="display: None;">
@@ -191,9 +202,15 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
                             <div class="content-buttons" style="clear:both">
                                 <input  type="submit" class="btn" value="Cadastrar"/>
                             </div>
+=======
+                    <div class="content-buttons" style="clear:both">
+                        <input  type="submit" class="btn" value="Cadastrar"/>
+                    </div>
+>>>>>>> origin/dev
                 </form>
 
             </div>

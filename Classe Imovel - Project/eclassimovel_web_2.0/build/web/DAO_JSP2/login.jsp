@@ -23,9 +23,13 @@
     }
     else
     {
-        String redirectPage = new String("/eclassimovel_web/PAGINAS/login.jsp");
+        String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
         response.setStatus(response.SC_MOVED_TEMPORARILY);
         response.setHeader("Location", redirectPage);        
     }
 %>
+
+<%= email %>
+<%= senha  %>
+
 

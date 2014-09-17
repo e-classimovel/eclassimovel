@@ -24,7 +24,7 @@
 
         if (result.first()){
             id = result.getString("id");
-            login = result.getString("login");
+            email = result.getString("email");
             nome = result.getString("nome");
             dtNascimento = result.getString("dataNascimento");
             cpf = result.getString("cpf");
