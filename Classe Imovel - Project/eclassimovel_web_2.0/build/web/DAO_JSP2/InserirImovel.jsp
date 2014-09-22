@@ -11,10 +11,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@ include file="/DAO_JSP2/conexao.jsp" %>
-
+<%@ include file="/QUERYS/SelecionarCliente.jsp" %>
 <%
     String endereco = request.getParameter("imovel_endereco");
-<<<<<<< HEAD
+    String idCliente = session.getAttribute("id").toString();
     String idTipoImovel = request.getParameter("imovel_tipo_imovel");
     String tamanho = request.getParameter("imovel_tamanho");
     String valor = request.getParameter("imovel_valor").toString(); 
@@ -30,8 +30,8 @@
     String especificaoImovel = request.getParameter("imovel_especificacao");
 
          
-    String sqlQuery = "INSERT INTO Tb_Imovel (endereco, idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao)"
-                    + " VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
+    String sqlQuery = "INSERT INTO Tb_Imovel (endereco, idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente)"
+                    + " VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %s)";
 
     sqlQuery =  String.format(
                     sqlQuery, 
@@ -46,60 +46,17 @@
                     permuta,
                     mostrarGmaps,
                     especificaoImovel,
-                    dtinclusao
+                    dtinclusao,
+                    idCliente
                 );
     
     PreparedStatement st = connection.prepareStatement(sqlQuery);
     st.executeUpdate();
-=======
-    String nome = request.getParameter("imovel_numero");
-    String idTipoImovel = request.getParameter("tipo_imovel");
-    String tamanho = request.getParameter("imovel_tamanho"); 
-    String valor = request.getParameter("imovel_valor");
-    String qtdQuartos = request.getParameter("imovel_qtdQuartos");
-    String qtdVagas = request.getParameter("vagas_garagem");
-    String dtInclusao = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
-    String area_util = request.getParameter("area_util");
-    String descricao = request.getParameter("imovel_descricao");
-    String permuta = request.getParameter("permuta") == null ? "0" : "1";
-    String mostrar_gmaps = request.getParameter("mostrar_mapa") == null ? "0" : "1";
-    String especificao_imovel = request.getParameter("especificacao") ;
 
-
-    String sqlQuery = "INSERT INTO Tb_Imovel (endereco, nome, idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, dtInclusao, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel)"
-            + "VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
-
-
-    sqlQuery = String.format(
-                sqlQuery, 
-                endereco, 
-                nome, 
-                idTipoImovel, 
-                tamanho, 
-                valor, 
-                qtdQuartos, 
-                qtdVagas,
-                dtInclusao,
-                area_util,  
-                descricao,
-                permuta,
-                mostrar_gmaps,
-                especificao_imovel
-    );          
-
-
-    PreparedStatement st = connection.prepareStatement(sqlQuery);
-    st.executeUpdate();
-
->>>>>>> origin/dev
     String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
     response.setStatus(response.SC_MOVED_TEMPORARILY);
     response.setHeader("Location", redirectPage); 
     statement.close();
-<<<<<<< HEAD
-%>
-=======
 %>
 
 <%= sqlQuery %>
->>>>>>> origin/dev

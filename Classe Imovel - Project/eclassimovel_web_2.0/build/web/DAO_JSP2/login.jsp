@@ -4,19 +4,22 @@
     Author     : guilhermediasbautista
 --%>
 <%@ include file="/DAO_JSP2/conexao.jsp" %>
+<%@ include file="/QUERYS/SelecionarCliente.jsp" %>
+
 <%@page import="java.sql.PreparedStatement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% 
     String email = request.getParameter("email");
     String senha = request.getParameter("senha");
+    String query = GetQuery(email, senha);
     
-    ResultSet result  = statement.executeQuery("SELECT * FROM Tb_Cliente WHERE email ='" + email + "' AND senha ='" + senha + "'");
-    result.next();
+    ResultSet result  = statement.executeQuery(query);
     
     if (result.first()) {
         session.setAttribute( "user", result.getString("email"));
         session.setAttribute( "id", result.getInt("id"));
         session.setAttribute( "nome_user", result.getString("nome"));
+        session.setAttribute( "possuiImovel", result.getString("idMovel") == "null" ? "" : result.getString("idMovel"));
         String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
         response.setStatus(response.SC_MOVED_TEMPORARILY);
         response.setHeader("Location", redirectPage);
