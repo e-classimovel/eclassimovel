@@ -14,4 +14,5 @@
             <img src="./css/imagens/twitter.png" height="50" width="50" target="new">                
         </a>
     </div>
+    <div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>
 </footer>

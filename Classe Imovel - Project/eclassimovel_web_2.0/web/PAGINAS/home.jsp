@@ -48,14 +48,13 @@ and open the template in the editor.
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div>
-        <script>$('#carousel-example-generic').carousel()</script>
         
         <div class ="container">
             <div class =" row">
 
         <%@ include file = "/COMPONENTES/busca-lateral.jsp" %>
         <div class="content">
-            <div class ="col-sm-8" style="margin-top:2%;">                 
+            <div class ="col-sm-8 result-busca" style="margin-top:2%;" >                 
                 <div class="col-sm-4">
                     <div class="panel panel-default">       
                         <div class="panel-body">
@@ -114,6 +113,7 @@ and open the template in the editor.
         </div>
         </div>
         <script src="script/home.js" type="text/javascript"></script>
+        <script src="script/Site/ajax-busca.js" type="text/javascript"></script>
         <%@include file = "/COMPONENTES/footer.jsp" %>
     </body>
 </html>
