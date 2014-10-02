@@ -1,14 +1,14 @@
 <footer style="background: #890213 ">
 
     <p style="color:#fff; ">&copy; 2014 - Todos direitos reservados</p>
-    <div class="facebook">
+    <div id="facebook">
         <a href="https://www.facebook.com/profile.php?id=100008267985183">
-            <img src="./css/imagens/facebook.png"  height="50" width="50" target="new">
+            <img class="facebook" src="/eclassimovel_web/css/imagens/facebook.png">
         </a>
     </div>
-    <div class="twitter">
+    <div id="twitter">
         <a href="https://twitter.com/EClassImovel">
-            <img src="./css/imagens/twitter.png" height="50" width="50" target="new">                
+            <img class="twitter" src="/eclassimovel_web/css/imagens/twitter.png">
         </a>
     </div>
     <div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>
