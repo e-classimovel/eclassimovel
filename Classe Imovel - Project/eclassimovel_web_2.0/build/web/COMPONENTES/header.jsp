@@ -30,9 +30,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
                 <li class="nav-quem-arredonda"><a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp">${ id == null  ? "CADASTRAR-SE" : "EDITAR" }</a></li>
-                  <% if (session.getAttribute("id") != null) {%>
-                    <li class="nav-cadastrar"><a href="/eclassimovel_web/PAGINAS/cadastro_imovel.jsp">CADASTRAR</a></li>
-                 <% } %>
+                  
+                    <li class="nav-cadastrar"><a href="/eclassimovel_web/PAGINAS/cadastro_imovel.jsp">CADASTRAR IMÓVEL</a></li>
+              
                 <li class="nav-quem-somos"><a href="/eclassimovel_web/PAGINAS/quem_somos.jsp">QUEM SOMOS</a></li>
             </ul>
             
