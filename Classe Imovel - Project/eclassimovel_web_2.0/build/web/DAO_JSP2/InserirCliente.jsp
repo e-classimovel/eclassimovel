@@ -15,7 +15,8 @@
     //Salvar no Banco
 
     String clienteId = request.getParameter("id");  
-    String clienteNome = request.getParameter("cliente_nome");    
+    String clienteNome = request.getParameter("cliente_nome");
+    String clienteSobreNome = request.getParameter("cliente_sobrenome");      
     String clienteCpf = request.getParameter("cliente_cpf");
     String clienteRg = request.getParameter("cliente_rg");
     String clienteEmail = request.getParameter("cliente_email");
@@ -23,11 +24,11 @@
     String clienteDtNascimento = request.getParameter("cliente_dtNascimento");
     String clienteDtInclusao = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
     
-    String sqlQuery = "INSERT INTO Tb_Cliente (nome,senha,dataNascimento,cpf,rg,email,dtInclusao) VALUES ('%s','%s','%s','%s','%s','%s','%s')";
+    String sqlQuery = "INSERT INTO Tb_Cliente (nome,sobrenome,senha,dataNascimento,cpf,rg,email,dtInclusao) VALUES ('%s','%s','%s','%s','%s','%s','%s')";
     
     
         
-    sqlQuery = String.format(sqlQuery, clienteNome, clienteSenha, clienteDtNascimento, clienteCpf, clienteRg, clienteEmail, clienteDtInclusao);
+    sqlQuery = String.format(sqlQuery, clienteNome, clienteSobreNome, clienteSenha, clienteDtNascimento, clienteCpf, clienteRg, clienteEmail, clienteDtInclusao);
         
     //Salvar Imagem
 
@@ -36,11 +37,12 @@
     //filePart.write(String.format("C:\\Users\\gilmar.junior\\Desktop\\Documents\\Teste\\%s.jpg", clienteNome.trim()));
     
     PreparedStatement st = connection.prepareStatement(sqlQuery);
-    st.executeUpdate();
+    st.executeUpdate(sqlQuery);
     String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
     response.setStatus(response.SC_MOVED_TEMPORARILY);
     response.setHeader("Location", redirectPage); 
     statement.close();
+
  %>
  
  

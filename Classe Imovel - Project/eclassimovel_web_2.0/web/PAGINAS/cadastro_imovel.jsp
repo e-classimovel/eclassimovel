@@ -20,91 +20,6 @@
                 <form  action="/eclassimovel_web/DAO_JSP2/InserirImovel.jsp" class="form-horizontal" enctype="multipart/form-data" role="form" method="post">
                     <div class ="col-sm-5">
                         <fieldset>
-                            <legend>Endereço</legend>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Endereço</label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="imovel_endereco" class="form-control" value="<%=endereco%>" >  
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Número</label>
-                                <div class="col-sm-9">
-                                    <input type="number" name="imovel_numero" class="form-control" >  
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 con trol-label">Complemento</label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="imovel_complemento" class="form-control" >  
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">CEP</label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="imovel_cep" class="form-control cep" >  
-                                </div>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Dados do Imóvel</legend>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Qtd de Quartos</label>
-                                <div class="col-sm-9">
-                                    <input type="number" name="imovel_qtdQuartos" class="form-control" value="<%=qtdQuartos%>" >  
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Tamanho</label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="imovel_tamanho" class="form-control" value="<%=tamanho%>" >  
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Valor</label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="imovel_valor" class="form-control" value="<%=valor %>"  >  
-                                </div>
-                            </div>
-                             <div class="form-group">
-                                <label class="col-sm-3 control-label">Area Util</label>
-                                <div class="col-sm-9">
-                                    <input class="form-control" name="imovel_area_util" value="<%=areaUtil %>"  >
-                                </div>
-                            </div>
-                             <div class="form-group">
-                                <label class="col-sm-3 control-label">Vagas na Garagem</label>
-                                <div class="col-sm-9">
-                                    <input class="form-control" name="imovel_vagas_garagem" value="<%=vagas %>" >
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-3 col-sm-9">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input name="imovel_mostrar_mapa" type="checkbox" value="<%=googleMaps %>" > Mostrar meu imóvel no Google Maps
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-3 col-sm-9">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input name="imovel_permuta" type="checkbox" <%=permuta%> > Aceita Permuta
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Descrição</label>
-                                <div class="col-sm-9">
-                                    <textarea class="form-control" name="imovel_descricao" rows="3"  ><%=descricao %></textarea>
-                                </div>
-                            </div>
-                                                       
-                        </fieldset>
-                        <fieldset>
                             <legend>Tipo do Imóvel</legend>
                             
                             <div class="form-group">
@@ -161,6 +76,90 @@
                                 </div>
                             </div>
                         </fieldset>
+                        <fieldset>
+                            <legend>Dados do Imóvel</legend>
+                            <div class="form-group">
+                                <label  id="qtd_quartos" class="col-sm-3 control-label">Qtd de Quartos</label>
+                                <div class="col-sm-9">
+                                    <input id="qtd_quartos1" type="number" name="imovel_qtdQuartos" class="form-control"  value="<%=qtdQuartos%>">  
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Tamanho</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="imovel_tamanho" class="form-control" value="<%=tamanho%>" />  
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Valor</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="imovel_valor" class="form-control" value="<%=valor %>"  >  
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label class="col-sm-3 control-label">Area Util</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" name="imovel_area_util" value="<%=areaUtil %>"  >
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label class="col-sm-3 control-label">Vagas na Garagem</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" name="imovel_vagas_garagem" value="<%=vagas %>" >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="imovel_mostrar_mapa" type="checkbox" value="<%=googleMaps %>" > Mostrar meu imóvel no Google Maps
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="imovel_permuta" type="checkbox" <%=permuta%> > Aceita Permuta
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Descrição</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" name="imovel_descricao" rows="3"  ><%=descricao %></textarea>
+                                </div>
+                            </div>                       
+                        </fieldset>
+                         <fieldset>
+                            <legend>Endereço</legend>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Endereço</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="imovel_endereco" class="form-control" value="<%=endereco%>" >  
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Número</label>
+                                <div class="col-sm-9">
+                                    <input type="number" name="imovel_numero" class="form-control" >  
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 con trol-label">Complemento</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="imovel_complemento" class="form-control" >  
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">CEP</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="imovel_cep" class="form-control cep" >  
+                                </div>
+                            </div>
+                        </fieldset>
                     </div>
                     <div class="col-sm-7">
                         <div class="content-box-principal">
@@ -189,8 +188,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="content-buttons" style="clear:both">
-                        <input  type="submit" class="btn" value="Cadastrar"/>
+                    <div style="clear:left"></div>
+                    <div class ="col-sm-5">
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <input  type="submit" class="btn btn-default" value="Cadastrar"/>
+                            </div>
+                        </div>
                     </div>
                 </form>
 
@@ -204,13 +208,18 @@
         
         <script>
             $("#tipo").change(function(){
-                if ($("#tipo").val()=="comercial"){
+                if ($("#tipo").val()=="2"){
                     $(".espcificacao_comercial").css("display","block");
                     $(".espcificacao_residencial").css("display","none");
+                    $("#qtd_quartos").css("display","none");
+                    $("#qtd_quartos1").css("display","none");
+                    
                     
                 }else{
                     $(".espcificacao_residencial").css("display","block");
-                    $(".espcificacao_comercial").css("display","none");  
+                    $(".espcificacao_comercial").css("display","none");
+                    $("#qtd_quartos").css("display","block");
+                    $("#qtd_quartos1").css("display","block");
                 }
             })
         </script>

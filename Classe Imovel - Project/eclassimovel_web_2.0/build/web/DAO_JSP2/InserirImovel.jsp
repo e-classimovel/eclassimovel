@@ -30,12 +30,11 @@
     String especificaoImovel = request.getParameter("imovel_especificacao");
 
          
-    String sqlQuery = "INSERT INTO Tb_Imovel (endereco, idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente)"
-                    + " VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %s)";
+    String sqlQuery = "INSERT INTO Tb_Imovel (idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente)"
+                    + " VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %s);";
 
     sqlQuery =  String.format(
-                    sqlQuery, 
-                    endereco, 
+                    sqlQuery,  
                     idTipoImovel, 
                     tamanho, 
                     valor, 
@@ -49,14 +48,13 @@
                     dtinclusao,
                     idCliente
                 );
-    
+
+    sqlQuery="INSERT INTO Tb_Imovel (idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente) VALUES ('2', '111111', '1111', '1231', '11', '111', 'guilherme teste hahaha ahaa', '1', '1', 'box/garagem', '2014-09-30', 9);";
     PreparedStatement st = connection.prepareStatement(sqlQuery);
-    st.executeUpdate();
+    statement.executeQuery(sqlQuery);
 
     String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
     response.setStatus(response.SC_MOVED_TEMPORARILY);
     response.setHeader("Location", redirectPage); 
     statement.close();
 %>
-
-<%= sqlQuery %>

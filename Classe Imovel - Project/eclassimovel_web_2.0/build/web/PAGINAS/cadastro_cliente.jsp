@@ -27,54 +27,54 @@
                                 <div class="form-group">
                                         <label class="col-sm-2 control-label">Nome</label>
                                         <div class="col-sm-6">
-                                            <input class="form-control" name="cliente_nome" type="text" value="<%=nome%>">
+                                            <input class="form-control"  required ame="cliente_nome" type="text" value="<%=nome%>">
                                         </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Sobrenome</label>
                                     <div class="col-sm-6">
-                                        <input class="form-control"  name="cliente_sobrenome" type="text" value="">
+                                        <input class="form-control" required  name="cliente_sobrenome" type="text" value="<%=sobrenome%>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Data de Nascimento</label>
                                     <div class="col-sm-2">
-                                        <input class="form-control data" name="cliente_dtNascimento" type="date" value="<%=dtNascimento%>"/>
+                                        <input class="form-control data" required name="cliente_dtNascimento" type="date" value="<%=dtNascimento%>"/>
                                     </div>
                   
                                     <label class="col-sm-1 control-label"> RG</label>
                                     <div class="col-sm-3">
-                                        <input class="form-control rg" name="cliente_rg" type="text" value=""/>
+                                        <input class="form-control rg" required="" name="cliente_rg" type="text" value=""/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label"> CPF</label>
                                     <div class="col-sm-6">
-                                        <input class="form-control cpf" name="cliente_cpf" type="text" value="<%=cpf%>"/>
+                                        <input class="form-control cpf" required name="cliente_cpf" type="text" value="<%=cpf%>"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Senha</label>
                                     <div class="col-sm-6">
-                                        <input class="form-control" name="cliente_senha" type="password" value ="<%=senha%>" />
+                                        <input class="form-control" required name="cliente_senha" type="password" value ="<%=senha%>" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Confirma Senha</label>
                                     <div class="col-sm-6"> 
-                                        <input class="form-control" type="password" value=""/>
+                                        <input class="form-control" required type="password" value=""/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">E-mail</label>
                                     <div class="col-sm-6">
-                                        <input class="form-control" name="cliente_email" type="email" value="<%=email%>"/>
+                                        <input class="form-control" required name="cliente_email" type="email" value="<%=email%>"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Confirmar e-mail</label>
                                     <div class="col-sm-6">
-                                        <input class="form-control" name="email" type="email" value=""/>
+                                        <input class="form-control" required name="email" type="email" value=""/>
                                     </div>
                                 </div>
                                     
@@ -87,15 +87,17 @@
                                 </div>
                             </div>
                             -->
-                            <div class="content-buttons" style="clear:both">
-                                <input  type="submit" class="btn" value="Cadastrar"/>
-                            </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <input  type="submit" class="btn btn-default" value="Cadastrar"/>
+                                    </div>
+                                </div>
                             </fieldset>
                         <!--</div>-->
                     </form>                
-        </div>
+                </div>
              </div>
-            <script src="/eclassimovel_web/script/cadastro.js" type="text/javascript"></script
+            <script src="/eclassimovel_web/script/cadastro.js" type="text/javascript"></script>
         </div>
         <%@ include file = "/COMPONENTES/footer.jsp" %>
     </body>

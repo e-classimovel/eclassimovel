@@ -30,6 +30,7 @@
             cpf = result.getString("cpf");
             email = result.getString("email");
             senha = result.getString("senha");
+            sobrenome=result.getString("sobrenome");
         }
     }
  %>
