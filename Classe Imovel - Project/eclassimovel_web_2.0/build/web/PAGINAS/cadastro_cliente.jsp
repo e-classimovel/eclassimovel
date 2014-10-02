@@ -44,7 +44,7 @@
                   
                                     <label class="col-sm-1 control-label"> RG</label>
                                     <div class="col-sm-3">
-                                        <input class="form-control rg" required="" name="cliente_rg" type="text" value=""/>
+                                        <input class="form-control rg" required="" name="cliente_rg" type="text" value="<%=rg%>"/>
                                     </div>
                                 </div>
                                 <div class="form-group">

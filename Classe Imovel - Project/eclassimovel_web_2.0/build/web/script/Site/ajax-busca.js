@@ -18,7 +18,7 @@ var ajaxBusca = {
                 De: $(".de").val(),
                 Ate: $(".ate").val(),
                 UF: $(".uf").val(),
-                Cidade: $(".cidade").val(),
+                Cidade: $(".cidade").val(), 
                 Bairro: $(".bairro").val()
             };
             

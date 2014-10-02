@@ -9,7 +9,7 @@
                     <div class="form-group">
                         <label class="col-sm-5 control-label">Finalidade</label>
                         <div class="col-sm-6">
-                            <select class="form-control" name="finalidade" class="finalidade">
+                            <select class="form-control finalidade" name="finalidade" class="finalidade">
                                 <option class="form-control">Comprar </option>
                                 <option class="form-control">Alugar</option>
                             </select>
