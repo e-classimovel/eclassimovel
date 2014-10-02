@@ -114,6 +114,8 @@ and open the template in the editor.
         </div>
         <script src="script/home.js" type="text/javascript"></script>
         <script src="script/Site/ajax-busca.js" type="text/javascript"></script>
+        <script src="script/bootstrap-modal.js" type="text/javascript"></script>
+        <script src="script/bootstrap-modalmanager.js" type="text/javascript"></script>
         <%@include file = "/COMPONENTES/footer.jsp" %>
     </body>
 </html>
