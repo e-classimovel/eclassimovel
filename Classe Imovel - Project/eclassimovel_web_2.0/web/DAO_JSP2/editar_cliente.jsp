@@ -12,7 +12,7 @@
 
 <%@ include file="/DAO_JSP2/conexao.jsp" %>
 <%
-    String id= "", login = "", nome = "", dtNascimento = "", cpf = "", email = "", senha = "";
+    String id= "", login = "", nome = "", dtNascimento = "", cpf = "", email = "", senha = "",sobrenome = "";
     
     if (session.getAttribute("id") != null) {
         int idcliente =  Integer.parseInt(session.getAttribute("id").toString());
@@ -30,7 +30,7 @@
             cpf = result.getString("cpf");
             email = result.getString("email");
             senha = result.getString("senha");
-            sobrenome=result.getString("sobrenome");
+            sobrenome = result.getString("sobrenome");
         }
     }
  %>

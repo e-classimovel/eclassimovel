@@ -31,9 +31,9 @@
             <ul class="nav navbar-nav navbar-left">
                 <li class="nav-quem-arredonda"><a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp">${ id == null  ? "CADASTRAR-SE" : "EDITAR" }</a></li>
                   <% if (session.getAttribute("id") != null) {%>
-                    <li class="nav-mapa"><a href="/eclassimovel_web/PAGINAS/cadastro_imovel.jsp">CADASTRAR IMÓVEL</a></li>
+                    <li class="nav-cadastrar"><a href="/eclassimovel_web/PAGINAS/cadastro_imovel.jsp">CADASTRAR</a></li>
                  <% } %>
-                <li class="nav-ranking"><a href="/eclassimovel_web/PAGINAS/quem_somos.jsp">QUEM SOMOS</a></li>
+                <li class="nav-quem-somos"><a href="/eclassimovel_web/PAGINAS/quem_somos.jsp">QUEM SOMOS</a></li>
             </ul>
             
             <% if (session.getAttribute("id") == null) {%>
