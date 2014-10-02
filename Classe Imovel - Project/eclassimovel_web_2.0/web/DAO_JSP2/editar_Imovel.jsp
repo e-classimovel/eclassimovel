@@ -35,10 +35,6 @@
         }
     }
  %>
- 
- <%=  session.getAttribute("possuiImovel")%>
- 
-  <%=   session.getAttribute("id")%>
 
  
  

@@ -93,7 +93,7 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Valor</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="imovel_valor" class="form-control" value="<%=valor %>"  >  
+                                    <input type="text" name="imovel_valor" class="form-control" value="<%=valor%>"  >  
                                 </div>
                             </div>
                              <div class="form-group">

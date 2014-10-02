@@ -27,7 +27,7 @@
                                 <div class="form-group">
                                         <label class="col-sm-2 control-label">Nome</label>
                                         <div class="col-sm-6">
-                                            <input class="form-control"  required ame="cliente_nome" type="text" value="<%=nome%>">
+                                            <input class="form-control"  required name="cliente_nome" type="text" value="<%=nome%>">
                                         </div>
                                 </div>
                                 <div class="form-group">

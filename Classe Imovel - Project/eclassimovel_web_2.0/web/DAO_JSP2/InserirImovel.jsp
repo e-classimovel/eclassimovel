@@ -17,7 +17,7 @@
     String idCliente = session.getAttribute("id").toString();
     String idTipoImovel = request.getParameter("imovel_tipo_imovel");
     String tamanho = request.getParameter("imovel_tamanho");
-    String valor = request.getParameter("imovel_valor").toString(); 
+    String valor = request.getParameter("imovel_valor"); 
     String qtdQuartos = request.getParameter("imovel_qtdQuartos");//
     String qtdVagas = request.getParameter("imovel_vagas_garagem");
     String areaUtil = request.getParameter("imovel_area_util");
@@ -49,12 +49,13 @@
                     idCliente
                 );
 
-    sqlQuery="INSERT INTO Tb_Imovel (idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente) VALUES ('2', '111111', '1111', '1231', '11', '111', 'guilherme teste hahaha ahaa', '1', '1', 'box/garagem', '2014-09-30', 9);";
     PreparedStatement st = connection.prepareStatement(sqlQuery);
-    statement.executeQuery(sqlQuery);
+    st.executeUpdate(sqlQuery);
 
     String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
     response.setStatus(response.SC_MOVED_TEMPORARILY);
     response.setHeader("Location", redirectPage); 
     statement.close();
 %>
+
+<%=sqlQuery%>
