@@ -9,18 +9,18 @@
                     <div class="form-group">
                         <label class="col-sm-5 control-label">Finalidade</label>
                         <div class="col-sm-6">
-                            <select class="form-control finalidade" name="finalidade" class="finalidade">
-                                <option class="form-control">Comprar </option>
-                                <option class="form-control">Alugar</option>
+                            <select class="form-control finalidade" name="finalidade" >
+                                <option class="form-control" value="1">Comprar </option>
+                                <option class="form-control" value="2">Alugar</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-5 control-label" >Tipo de Imóveis</label>
                         <div class="col-sm-6">                            
-                            <select class="form-control"  name="tipoImoveis" class="tipoImoveis">
-                                <option class="form-control" >Comercial</option>
-                                <option class="form-control">Residencial</option>
+                            <select class="form-control tipoImovel"  name="tipoImoveis" >
+                                <option class="form-control" value="1" >Comercial</option>
+                                <option class="form-control" value="2">Residencial</option>
                             </select>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                         <label class="col-sm-5 control-label">De:</label>
                         <div class="col-sm-6">
                             <div class="input-group">
-                                <input class="form-control" type='number' placeholder="R$"  name="De" class="De"/>
+                                <input class="form-control de" type='number' placeholder="R$"  name="De" />
                                 <span class="input-group-addon" >,00</span>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                         <label class="col-sm-5 control-label">Até:</label>
                         <div class="col-sm-6">                
                             <div class="input-group">
-                                <input class="form-control" type='number' placeholder="R$"  name="Ate" class="Ate"/>
+                                <input class="form-control ate" type='number' placeholder="R$"  name="Ate"/>
                                 <span class="input-group-addon">,00</span>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                     <div class="form-group">
                         <label class="col-sm-5 control-label" >UF:</label>
                         <div class="col-sm-6">
-                            <select class="form-control"  name="uf" class="uf">
+                            <select class="form-control uf"  name="uf">
                                 <option>SP</option>
                                 <option>RJ</option>
                             </select>
@@ -54,7 +54,7 @@
                      <div class="form-group">
                         <label class="col-sm-5 control-label">Cidade</label>
                         <div class="col-sm-6">
-                            <select class="form-control"  name="cidade" class="cidade">
+                            <select class="form-control cidade"  name="cidade" >
                                 <option>Taboão da Serra</option>
                                 <option>São Paulo</option>
                             </select>
@@ -63,7 +63,7 @@
                      <div class="form-group">
                         <label class="col-sm-5 control-label">Bairro</label>
                         <div class="col-sm-6">
-                            <input class="form-control" type='text' name="bairro" class='bairro' />
+                            <input class="form-control bairro" type='text' name="bairro" />
                         </div>
                     </div>
                     <div class="form-group">

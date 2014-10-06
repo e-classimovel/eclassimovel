@@ -46,7 +46,8 @@ var ajaxBusca = {
             var model = ajaxBusca.Model.CreateModel();
             
             var parameters = ajaxBusca.Model.CreateParameters(model);
-                       
+                
+            
             $.ajax({
                 type : "POST",
                 url : "/eclassimovel_web/DAO_JSP2/buscar.jsp",

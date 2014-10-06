@@ -5,17 +5,19 @@
 --%>
 
 <%!
-    public String GetQuery(String finalidade, String tipoImoveis, String de, String ate, String UF, String cidade, String bairro)
+    public String GetQuery(String idFinalidade, String idTipoImovel, String de, String ate)
     {
-        String query = "SELECT "
-                        + "cliente.*,"
-                        + "imovel.id as idMovel "
-                     + "FROM "
-                        + "Tb_Cliente cliente "
-                        + "LEFT JOIN Tb_Imovel imovel ON (cliente.id = imovel.idCliente) "
-                    + "WHERE "
-                        + "cliente.email = '" + email + "'"
-                        + " AND senha = '" + senha + "'";
+        String query = "SELECT " +
+                            "* " + 
+                        "FROM " +
+                            "Tb_Imovel " +
+                        "WHERE " +
+                            "idFinalidade = %s " +
+                            "AND idTipoImovel = %s " +
+                        "AND valor BETWEEN %s AND %s ";
+
+        query = String.format(query, idFinalidade, idTipoImovel, de, ate);
+
         return query;
     }
  %>

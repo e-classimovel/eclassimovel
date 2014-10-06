@@ -8,20 +8,34 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Calendar"%>
 <%@page import="java.sql.PreparedStatement"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 
 <%@ include file="/DAO_JSP2/conexao.jsp" %>
-<%
-    String finalidade = "", tamanho = "", valor = "", areaUtil = "", vagas = "", googleMaps = "", permuta = "", descricao = "", tipoImovel = "", endereco = "";
-  
+<%@ include file="/QUERYS/BuscarImovel.jsp" %>
 
-    finalidade =  request.getParameter("finalidade");
+<%
+    String idFinalidade = request.getParameter("finalidade");
+    String idTipoImovel = request.getParameter("tipoimovel");
+    String de = request.getParameter("de");
+    String ate = request.getParameter("ate");
+    
+    String query = GetQuery(idFinalidade, idTipoImovel, de, ate);
+
+     
+    ResultSet result = statement.executeQuery(query);
+
  %>
  
- <%= finalidade %>
-
- 
- 
+<% while (result.next()) { %>
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <img src='' class="img-rounded" />
+            </div>
+            <div class="panel-footer"><label><%= result.getString("descricao")%></label></div>
+        </div>
+    </div>             
+<%}%>
  
  
  

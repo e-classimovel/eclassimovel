@@ -1,5 +1,7 @@
 <footer style="background: #890213 ">
-
+    <div id="loading" style="display: none">
+        <img id="loading-image" src="http://www.pubnub.com/static/images/loading.gif" alt="Loading..." />
+    </div>
     <p style="color:#fff; ">&copy; 2014 - Todos direitos reservados</p>
     <div id="facebook">
         <a href="https://www.facebook.com/profile.php?id=100008267985183">
