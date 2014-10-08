@@ -163,32 +163,8 @@
                                 </div>
                             </fieldset>
                         </div>
-                        <div class="col-sm-7">
-                            <div class="content-box-principal">
-                                <img class='img-box' src='./css/imagens/imovel5.jpg'>
-                                <input type="file" />
-                            </div>
-                            <div class="content-box-images">
-                                <div class="box-img">
-                                    <img class='img-box' src='./css/imagens/imovel4.jpg'>
-
-                                </div>
-                                <div class="box-img">
-                                    <img class='img-box' src='./css/imagens/imovel6.jpg'>
-                                </div>
-                                <div class="box-img">
-                                    <img class='img-box' src='./css/imagens/imovel4.jpg'>
-                                </div>
-                                <div class="box-img">
-                                    <img class='img-box' src='./css/imagens/imovel3.jpg'>
-                                </div>
-                                <div class="box-img">
-                                    <img class='img-box' src='./css/imagens/imovel2.jpg'>
-                                </div>
-                                <div class="box-img">
-                                    <img class='img-box' src='./css/imagens/imovel1.jpg'>
-                                </div>
-                            </div>
+                        <div class="col-sm-7" style="border:1px solid black">
+                            <%@include file = "/PAGINAS/cadastro_imovel_imagens.jsp" %>
                         </div>
                         <div style="clear:left"></div>
                         <div class ="col-sm-5">
@@ -206,7 +182,9 @@
 
             <%@include file = "/COMPONENTES/footer.jsp" %>
             <script src="script/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
-            <script src="script/jquery-1.10.2.js" type="text/javascript"></script>
+            <script src="script/jquery-1.10.2.js" type="text/javascript"></script>   
+            <script src="/eclassimovel_web/script/Site/uploadimagens.js" type="text/javascript"></script>
+  
 
             <script>
                 $("#tipo").change(function(){
