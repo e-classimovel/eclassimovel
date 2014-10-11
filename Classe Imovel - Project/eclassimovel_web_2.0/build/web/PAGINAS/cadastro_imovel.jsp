@@ -80,6 +80,12 @@
                         </fieldset>
                         <fieldset>
                             <legend>Dados do Imóvel</legend>
+<!--                            <div class="form-group">
+                                <label  id="nome" class="col-sm-3 control-label">Título do Imovel</label>
+                                <div class="col-sm-9">
+                                    <input id="nome" type="text" name="nome" class="form-control" value="<%=nome%>">  
+                                </div>
+                            </div>-->
                             <div class="form-group">
                                 <label  id="qtd_quartos" class="col-sm-3 control-label">Qtd de Quartos</label>
                                 <div class="col-sm-9">
@@ -87,21 +93,22 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">Tamanho</label>
+                                <label class="col-sm-3 control-label">Área Total</label>
                                 <div class="col-sm-9">
                                     <input type="text" name="imovel_tamanho" class="form-control" value="<%=tamanho%>" />  
                                 </div>
                             </div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">Valor</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" name="imovel_valor" class="form-control" value="<%=valor %>"  >  
-                                    </div>
-                                </div>
+                                
                                  <div class="form-group">
                                     <label class="col-sm-3 control-label">Area Util</label>
                                     <div class="col-sm-9">
                                         <input class="form-control" name="imovel_area_util" value="<%=areaUtil %>"  >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Valor</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="imovel_valor" class="form-control money" value="<%=valor %>"  >  
                                     </div>
                                 </div>
                                  <div class="form-group">
@@ -138,9 +145,27 @@
                              <fieldset>
                                 <legend>Endereço</legend>
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label">Endereço</label>
+                                    <label class="col-sm-3 control-label">CEP</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="imovel_cep" class="form-control cep" >  
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Rua</label>
                                     <div class="col-sm-9">
                                         <input type="text" name="imovel_endereco" class="form-control" value="<%=endereco%>" >  
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Bairro</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="imovel_bairro" class="form-control" >  
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Cidade</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="imovel_cidade" class="form-control" >  
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -155,12 +180,7 @@
                                         <input type="text" name="imovel_complemento" class="form-control" >  
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">CEP</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" name="imovel_cep" class="form-control cep" >  
-                                    </div>
-                                </div>
+                                
                             </fieldset>
                         </div>
                         <div class="col-sm-7">

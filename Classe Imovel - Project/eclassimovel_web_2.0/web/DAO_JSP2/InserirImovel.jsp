@@ -13,6 +13,7 @@
 <%@ include file="/DAO_JSP2/conexao.jsp" %>
 <%@ include file="/QUERYS/SelecionarCliente.jsp" %>
 <%
+    String nome = request.getParameter("nome");
     String endereco = request.getParameter("imovel_endereco");
     String idCliente = session.getAttribute("id").toString();
     String idTipoImovel = request.getParameter("imovel_tipo_imovel");
@@ -30,11 +31,12 @@
     String especificaoImovel = request.getParameter("imovel_especificacao");
 
          
-    String sqlQuery = "INSERT INTO Tb_Imovel (idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente)"
-                    + " VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %s);";
+    String sqlQuery = "INSERT INTO Tb_Imovel (nome,idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente)"
+                    + " VALUES ('%s','%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %s);";
 
     sqlQuery =  String.format(
-                    sqlQuery,  
+                    sqlQuery,
+                    nome,
                     idTipoImovel, 
                     tamanho, 
                     valor, 

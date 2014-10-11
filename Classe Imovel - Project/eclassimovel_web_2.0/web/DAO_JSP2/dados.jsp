@@ -17,8 +17,8 @@
     if (session.getAttribute("possuiImovel") != null && session.getAttribute("possuiImovel") != "null" && session.getAttribute("possuiImovel") != "0") {
         String idMovel =  session.getAttribute("possuiImovel").toString();
 
-        String query = new String("SELECT * FROM Tb_Imovel WHERE id = %s");
-        query = String.format(query, idMovel);
+        String query = new String("SELECT * FROM Tb_Imovel WHERE id = 2");
+//        query = String.format(query, idMovel);
 
         ResultSet result = statement.executeQuery(query);
 
@@ -35,12 +35,4 @@
             tipoImovel = result.getString("idTipoImovel");
         }
     }
- %>
-
- 
- 
- 
- 
- 
- 
- 
+%>
