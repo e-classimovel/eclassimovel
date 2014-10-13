@@ -12,12 +12,12 @@
 
 <%@ include file="/DAO_JSP2/conexao.jsp" %>
 <%
-    String nome="", qtdQuartos = "", tamanho = "", valor = "", areaUtil = "", vagas = "", googleMaps = "", permuta = "", descricao = "", tipoImovel = "", endereco = "";
+    String especificacao = "", nome="", qtdQuartos = "", tamanho = "", valor = "", areaUtil = "", vagas = "", googleMaps = "", permuta = "", descricao = "", tipoImovel = "", endereco = "";
     
     if (session.getAttribute("possuiImovel") != null && session.getAttribute("possuiImovel") != "null" && session.getAttribute("possuiImovel") != "0") {
         String idMovel =  session.getAttribute("possuiImovel").toString();
 
-        String query = new String("SELECT * FROM Tb_Imovel WHERE id = 2");
+        String query = new String("SELECT * FROM Tb_Imovel WHERE id = 25");
 //        query = String.format(query, idMovel);
 
         ResultSet result = statement.executeQuery(query);
@@ -33,6 +33,7 @@
             permuta = result.getString("permuta") == "1" ? "checked" : "";
             descricao = result.getString("descricao");
             tipoImovel = result.getString("idTipoImovel");
+            especificacao=result.getString("especificacao_imovel");
         }
     }
 %>
