@@ -8,6 +8,7 @@
     </div>
     
     <div class='scripts'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="/eclassimovel_web/script/jquery-1.10.2.js" type="text/javascript"></script>
         <script src="/eclassimovel_web/script/jquery.mask.min.js" type="text/javascript"></script>
         <script src="/eclassimovel_web/script/site-mask.js" type="text/javascript"></script>
@@ -17,6 +18,7 @@
     <nav class="navbar  navbar-default navbar-fixed-top" role="navigation" style="background-color:#000; background: linear-gradient(to left, #890213 50%, #890213 50%);">
   
     <div class="container">
+        <div class="col-md-9">
     
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="">
@@ -27,37 +29,58 @@
             </button>
             <a class="navbar-brand" href="/eclassimovel_web/PAGINAS/home.jsp" style="height:100px; padding:0px;"><img src="/eclassimovel_web/css/imagens/logo.jpg" width="96px"></a>
         </div><!--navbar-header-->
+        
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-left">
-                <li class="nav-quem-arredonda"><a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp">${ id == null  ? "CADASTRAR-SE" : "EDITAR" }</a></li>
-                  
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="nav-quem-arredonda"><a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp">${ id == null  ? "CADASTRAR-SE" : "" }</a></li>
+
                     <li class="nav-cadastrar"><a href="/eclassimovel_web/PAGINAS/cadastro_imovel.jsp">CADASTRAR IMÓVEL</a></li>
-              
-                <li class="nav-quem-somos"><a href="/eclassimovel_web/PAGINAS/quem_somos.jsp">QUEM SOMOS</a></li>
-            </ul>
+
+                    <li class="nav-quem-somos"><a href="/eclassimovel_web/PAGINAS/quem_somos.jsp">QUEM SOMOS</a></li>
+                </ul>
+            </div>
+        </div>
+       <div class="col-md-3">
             
             <% if (session.getAttribute("id") == null) {%>
-                <form class="form-inline" method="POST" action="/eclassimovel_web/DAO_JSP2/login.jsp" role="form" style="float:right; margin-top:1%;">
-                    <div class="form-group">
-                        <div class="input-group">
+            
+                <form class="form" method="POST" action="/eclassimovel_web/DAO_JSP2/login.jsp" role="form" style="float:right; margin-top:1%;">
+
+                        <div class="input-group input-group-sm">
                             <div class="input-group-addon">@</div>
-                            <input class="form-control" name="email" type="text" placeholder="Enter email">
+                            <input class="form-control" name="email" type="text" placeholder="E-mail">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="sr-only" >Senha</label>
-                        <input type="password" name="senha" class="form-control" id="exampleInputPassword2" placeholder="Password">
-                    </div>
-                    <button type="submit" class="btn btn-default">Logar</button>
+
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-ok"></span></div>
+                            <input type="password" name="senha" class="form-control" placeholder="Senha">
+                        </div>
+   
+                    <button type="submit" class="btn btn-default">Entrar</button>
 
                 </form>
             <% }
             else {%>
-                <div class="form-group" style="float:right; color:#fff;">
-                    Bem vindo ${nome_user},
-
-                    <a href="/eclassimovel_web/DAO_JSP2/logout.jsp" >Deslogar</a>
-                    <a href="https://docs.google.com/document/d/1OvVpvyvqfpcr-V11ENEx_b9qxUv9lOacxCNO-AdK4Oc/pub"> ajuda</a>
+                <div class="form-group" style="color:#fff;margin-top:10px;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            Bem vindo ${nome_user}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="/eclassimovel_web/DAO_JSP2/logout.jsp" ><span class="glyphicon glyphicon-off"></span> Sair</a>                    
+                        </div>
+                        <div class="col-md-6">
+                            <a href="#"> <span class="glyphicon glyphicon-question-sign"></span> Ajuda</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp"> <span class="glyphicon glyphicon-cog"></span> Minha Conta </a>
+                        </div>
+                
+                    </div>
                 </div>
             <% } %>
             
@@ -70,3 +93,5 @@
     
 
 </header>
+            
+           

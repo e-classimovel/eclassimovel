@@ -38,7 +38,7 @@
                                         <label class="col-sm-3 control-label">Especificação do Imovel</label>
                                         <div class="col-sm-9">
                                             <select id="comercial" name="imovel_especificacao" class="form-control">
-                                                <option value="box/garagem">Box/Garagem</option>
+                                                <option value="Box/Garagem">Box/Garagem</option>
                                                 <option value="casa_comercial">Casa Comercial</option>
                                                 <option value="conjunto_comercial/sala">Conjunto Comercial/Sala</option>
                                                 <option value="galpa/deposito/armazen">Galpão/Depósito/Armazém</option>
@@ -183,32 +183,8 @@
                                 
                             </fieldset>
                         </div>
-                        <div class="col-sm-7">
-                            <div class="content-box-principal">
-                                <img class='img-box' src='./css/imagens/imovel5.jpg'>
-                                <input type="file" />
-                            </div>
-                            <div class="content-box-images">
-                                <div class="box-img">
-                                    <img class='img-box' src='./css/imagens/imovel4.jpg'>
-
-                                </div>
-                                <div class="box-img">
-                                    <img class='img-box' src='./css/imagens/imovel6.jpg'>
-                                </div>
-                                <div class="box-img">
-                                    <img class='img-box' src='./css/imagens/imovel4.jpg'>
-                                </div>
-                                <div class="box-img">
-                                    <img class='img-box' src='./css/imagens/imovel3.jpg'>
-                                </div>
-                                <div class="box-img">
-                                    <img class='img-box' src='./css/imagens/imovel2.jpg'>
-                                </div>
-                                <div class="box-img">
-                                    <img class='img-box' src='./css/imagens/imovel1.jpg'>
-                                </div>
-                            </div>
+                        <div class="col-sm-7" style="border:1px solid black">
+                            <%@include file = "/PAGINAS/cadastro_imovel_imagens.jsp" %>
                         </div>
                         <div style="clear:left"></div>
                         <div class ="col-sm-5">
@@ -226,7 +202,9 @@
 
             <%@include file = "/COMPONENTES/footer.jsp" %>
             <script src="script/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
-            <script src="script/jquery-1.10.2.js" type="text/javascript"></script>
+            <script src="script/jquery-1.10.2.js" type="text/javascript"></script>   
+            <script src="/eclassimovel_web/script/Site/uploadimagens.js" type="text/javascript"></script>
+  
 
             <script>
                 $("#tipo").change(function(){

@@ -1,7 +1,7 @@
 <div class="col-sm-4" style="margin-top: 6%;">
     
     <div class="panel panel-danger">
-        <div class="panel-heading" style="text-align: center;">Pesquise seu Imóvel</div>
+        <div class="panel-heading" style="text-align: center;"><h3>Pesquise seu Imóvel</h3></div>
             
             <div class="panel-body">
                 
@@ -68,7 +68,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="button" class="btn btn-default btn-search">Buscar</button>
+                            <button type="button" class="btn btn-default btn-search"> Buscar <span class="glyphicon glyphicon-search"></span></button>
                         </div>
                     </div>
                 </form>
