@@ -6,7 +6,11 @@ var arryImages = []
 
 var UploadImagens = {
     Model: {
-
+        IdMovel: $(".idMovel").val(),
+        
+        CreateParameters: function (imagem) {
+            return "idMovel=" + UploadImagens.Model.IdMovel + "&imagem=" + imagem;
+        }
     },
 
     View: {
@@ -30,6 +34,8 @@ var UploadImagens = {
                     arryImages.push(image);
 
                     UploadImagens.View.GerarImagens();
+                    
+                    UploadImagens.Controller.Upload(image);
                 };
 
                 FR.readAsDataURL(input.files[0]);
@@ -49,8 +55,18 @@ var UploadImagens = {
     },
 
     Controller: {
-
-
+        Upload: function (imagem) {
+            var parameters = UploadImagens.Model.CreateParameters(imagem);
+              
+            $.ajax({
+                type : "POST",
+                url : "/eclassimovel_web/DAO_JSP2/UploadImagem.jsp",
+                data : parameters,
+                success : function(data) {
+                    alert(data);    
+                }
+            });
+        }
     }
 };
 

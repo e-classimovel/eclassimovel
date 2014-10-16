@@ -20,6 +20,7 @@
             <div class="container">
                  <div class="row">
                     <form  action="/eclassimovel_web/DAO_JSP2/InserirImovel.jsp" class="form-horizontal" enctype="multipart/form-data" role="form" method="post">
+                        <input type="hidden" class="idMovel" value="<%=idMovel%>"/>
                         <div class ="col-sm-5">
                             <fieldset>
                                 <legend>Tipo do Imóvel</legend>
