@@ -16,6 +16,15 @@ var UploadImagens = {
     View: {
         StartEvents: function () {
             UploadImagens.View.SetEventUpload();
+            UploadImagens.View.InitializeArrayImagens();
+        },
+        
+        InitializeArrayImagens: function () {
+            $(".content-box-images img").each(function (index, element) {
+                var src = $(element).attr("src");
+                
+                arryImages.push(src);
+            });
         },
 
         SetEventUpload: function (){
@@ -30,8 +39,16 @@ var UploadImagens = {
 
                 FR.onload = function (e) {
                     var image = e.target.result;
-
-                    arryImages.push(image);
+                    
+                    
+                    if (UploadImagens.View.Validation())
+                        arryImages.push(image);
+                    else{
+                        alert("Atenção: Você atingiu a quantidade maxima de imagens.");
+                        return;
+                    }
+                    
+                    
 
                     UploadImagens.View.GerarImagens();
                     
@@ -40,6 +57,13 @@ var UploadImagens = {
 
                 FR.readAsDataURL(input.files[0]);
             }
+        },
+        
+        Validation: function () {
+            if (arryImages.length == 5)
+                return false;
+            
+            return true;
         },
 
         GerarImagens: function () {

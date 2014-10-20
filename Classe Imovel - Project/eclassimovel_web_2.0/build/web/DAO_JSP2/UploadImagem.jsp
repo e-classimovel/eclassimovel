@@ -4,12 +4,6 @@
     Author     : guilhermediasbautista/gilmar
 --%>
 
-<%@page import="java.io.InputStream"%>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Calendar"%>
-<%@page import="java.sql.PreparedStatement"%>
-
-
 <%@ include file="/DAO_JSP2/conexao.jsp" %>
 
 <%
@@ -18,16 +12,14 @@
     
     byte[] btImage = image.getBytes();
 
-    String query = "INSERT INTO Tb_Imagem_Imovel (idImovel,imagem)  VALUES ('%s', '%s')";
+    String query = "INSERT INTO Tb_Imagem_Imovel (idImovel,imagem) VALUES (?, ?)";
 
-    query =  String.format(
-                    query,  
-                    idImovel, 
-                    btImage
-                );
+    PreparedStatement pstmt = connection.prepareStatement(query);
 
-    PreparedStatement st = connection.prepareStatement(query);
-    st.executeUpdate(query);
+    pstmt.setString(1, idImovel);
+    pstmt.setBytes(2, btImage);
+
+    pstmt.executeUpdate();    
 
     String result = "Imagem inserida com sucesso";
  %>
