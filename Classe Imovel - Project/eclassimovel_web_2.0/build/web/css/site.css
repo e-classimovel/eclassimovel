@@ -90,3 +90,17 @@ footer{
     left: 50%;
   z-index: 100;
 }
+
+
+/* Galeria CSS */
+
+
+.box-img { 
+    float: left;
+    display: block;
+    height: 232px;
+    width: 232px;
+    margin: 10px;
+    margin-right: 70px;
+}
+.box-img img { padding: 15px; border: 1px solid #ccc; background-color: #eee; }

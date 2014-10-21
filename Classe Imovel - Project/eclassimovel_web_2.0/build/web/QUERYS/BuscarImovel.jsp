@@ -12,8 +12,8 @@
                         "FROM " +
                             "Tb_Imovel " +
                         "WHERE " +
-                            "idFinalidade = %s " +
-                            "AND idTipoImovel = %s " +
+                           
+                            "idTipoImovel = %s " +
                         "AND valor BETWEEN %s AND %s ";
 
         query = String.format(query, idFinalidade, idTipoImovel, de, ate);

@@ -20,6 +20,7 @@
             <div class="container">
                  <div class="row">
                     <form  action="/eclassimovel_web/DAO_JSP2/InserirImovel.jsp" class="form-horizontal" enctype="multipart/form-data" role="form" method="post">
+                        <input type="hidden" class="idMovel" value="<%=idMovel%>"/>
                         <div class ="col-sm-5">
                             <fieldset>
                                 <legend>Tipo do Imóvel</legend>
@@ -80,12 +81,6 @@
                         </fieldset>
                         <fieldset>
                             <legend>Dados do Imóvel</legend>
-<!--                            <div class="form-group">
-                                <label  id="nome" class="col-sm-3 control-label">Título do Imovel</label>
-                                <div class="col-sm-9">
-                                    <input id="nome" type="text" name="nome" class="form-control" value="<%=nome%>">  
-                                </div>
-                            </div>-->
                             <div class="form-group">
                                 <label  id="qtd_quartos" class="col-sm-3 control-label">Qtd de Quartos</label>
                                 <div class="col-sm-9">

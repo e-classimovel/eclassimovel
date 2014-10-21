@@ -7,11 +7,28 @@ var arryImages = []
 var UploadImagens = {
     Model: {
 
+        IdMovel: $(".idMovel").val(),
+        
+        CreateParameters: function (imagem) {
+            return "idMovel=" + UploadImagens.Model.IdMovel + "&imagem=" + imagem;
+        }
+
     },
 
     View: {
         StartEvents: function () {
             UploadImagens.View.SetEventUpload();
+
+            UploadImagens.View.InitializeArrayImagens();
+        },
+        
+        InitializeArrayImagens: function () {
+            $(".content-box-images img").each(function (index, element) {
+                var src = $(element).attr("src");
+                
+                arryImages.push(src);
+            });
+
         },
 
         SetEventUpload: function (){
@@ -25,15 +42,32 @@ var UploadImagens = {
                 var FR = new FileReader();
 
                 FR.onload = function (e) {
-                    var image = e.target.result;
-
-                    arryImages.push(image);
+                    var image = e.target.result;                    
+                    
+                    if (UploadImagens.View.Validation())
+                        arryImages.push(image);
+                    else{
+                        alert("Atenção: Você atingiu a quantidade maxima de imagens.");
+                        return;
+                    }
+                    
+                    
 
                     UploadImagens.View.GerarImagens();
+                    
+                    UploadImagens.Controller.Upload(image);
+
                 };
 
                 FR.readAsDataURL(input.files[0]);
             }
+        },
+        
+        Validation: function () {
+            if (arryImages.length == 5)
+                return false;
+            
+            return true;
         },
 
         GerarImagens: function () {
@@ -50,7 +84,18 @@ var UploadImagens = {
 
     Controller: {
 
-
+        Upload: function (imagem) {
+            var parameters = UploadImagens.Model.CreateParameters(imagem);
+              
+            $.ajax({
+                type : "POST",
+                url : "/eclassimovel_web/DAO_JSP2/UploadImagem.jsp",
+                data : parameters,
+                success : function(data) {
+                    alert(data);    
+                }
+            });
+        }
     }
 };
 
