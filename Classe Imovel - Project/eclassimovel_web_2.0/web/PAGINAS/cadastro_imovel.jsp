@@ -183,7 +183,7 @@
                                 
                             </fieldset>
                         </div>
-                        <div class="col-sm-7" style="border:1px solid black">
+                        <div class="col-sm-7">
                             <%@include file = "/PAGINAS/cadastro_imovel_imagens.jsp" %>
                         </div>
                         <div style="clear:left"></div>

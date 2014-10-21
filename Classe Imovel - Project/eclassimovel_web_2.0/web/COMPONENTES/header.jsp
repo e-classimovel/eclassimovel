@@ -34,7 +34,7 @@
                 <ul class="nav navbar-nav navbar-left">
                     <li class="nav-quem-arredonda"><a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp">${ id == null  ? "CADASTRAR-SE" : "" }</a></li>
 
-                    <li class="nav-cadastrar"><a href="/eclassimovel_web/PAGINAS/cadastro_imovel.jsp">CADASTRAR IMÓVEL</a></li>
+                    <li class="nav-cadastrar"><a href="/eclassimovel_web/PAGINAS/cadastro_imovel.jsp">${ id == null  ? "CADASTRAR IMÓVEL" : "EDITAR IMÓVEL" }</a></li>
 
                     <li class="nav-quem-somos"><a href="/eclassimovel_web/PAGINAS/quem_somos.jsp">QUEM SOMOS</a></li>
                 </ul>
@@ -69,15 +69,15 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="/eclassimovel_web/DAO_JSP2/logout.jsp" ><span class="glyphicon glyphicon-off"></span> Sair</a>                    
+                            <a href="/eclassimovel_web/DAO_JSP2/logout.jsp" style="color:#fff" ><span class="glyphicon glyphicon-off"></span> Sair</a>                    
                         </div>
                         <div class="col-md-6">
-                            <a href="#"> <span class="glyphicon glyphicon-question-sign"></span> Ajuda</a>
+                            <a href="#"style="color:#fff"> <span class="glyphicon glyphicon-question-sign"></span> Ajuda</a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp"> <span class="glyphicon glyphicon-cog"></span> Minha Conta </a>
+                            <a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp"style="color:#fff"> <span class="glyphicon glyphicon-cog"></span> Minha Conta </a>
                         </div>
                 
                     </div>
