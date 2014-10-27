@@ -101,6 +101,7 @@ footer{
     height: 232px;
     width: 232px;
     margin: 10px;
+    margin-top: 40px;
     margin-right: 70px;
 }
 .box-img img { padding: 15px; border: 1px solid #ccc; background-color: #eee; }

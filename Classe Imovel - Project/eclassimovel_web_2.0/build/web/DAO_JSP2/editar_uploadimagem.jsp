@@ -30,7 +30,8 @@
         byte[] blobAsBytes = blob.getBytes(1, blobLength);
         String imagem = new String(blobAsBytes).replace(' ', '+');
     %>
-    <div class="box-img" data-id="<%= result.getString("id") %>">
+    <div class="box-img">
+        <a href="#" class="btn-remove"  data-id="<%= result.getString("id") %>">Remover</a>
         <img class="img-box" width="300" src="<%=imagem%>">
     </div>             
 <%}%>

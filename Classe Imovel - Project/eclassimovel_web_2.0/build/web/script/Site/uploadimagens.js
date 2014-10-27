@@ -1,5 +1,6 @@
 $(document).ready(function () {
     UploadImagens.View.StartEvents();
+    RemoverImagens.View.StartEvents();
 });
 
 var arryImages = []
@@ -93,14 +94,46 @@ var UploadImagens = {
                 data : parameters,
                 success : function(data) {
                     alert(data);    
+                    location.reload();
                 }
             });
         }
     }
 };
 
-jQuery.fn.outerHTML = function (s) {
-    return s
-        ? this.before(s).remove()
-        : jQuery("<p>").append(this.eq(0).clone()).html();
+var RemoverImagens = {
+    Model: {
+    
+    },
+    
+    View: {
+        StartEvents: function () {
+            RemoverImagens.View.SetEventRemove();
+        },
+        
+        SetEventRemove: function () {
+            $(".btn-remove").unbind("click").click(function (evt){
+                evt.preventDefault();
+                
+                var id = parseInt($(this).attr("data-id"));
+                
+                RemoverImagens.Controller.Remover(id, this);
+            });
+        }
+    },
+    
+    Controller: {
+         Remover: function (id, element) {              
+            $.ajax({
+                type : "POST",
+                url : "/eclassimovel_web/DAO_JSP2/RemoverImagem.jsp",
+                data : "id=" + id,
+                success : function(data) {
+                    alert(data);    
+                    $(element).parent("div").remove();
+                    
+                }
+            });
+        }
+    }
 };
