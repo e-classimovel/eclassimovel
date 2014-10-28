@@ -27,13 +27,11 @@ and open the template in the editor.
     <div class="item active">
       <img src="/eclassimovel_web/css/imagens/imovel3.jpg"/>
       <div class="carousel-caption">
-        Foto A
       </div>
     </div>
     <div class="item">
-      <img src="/eclassimovel_web/css/imagens/imovel1.jpg" />
+      <img src="/eclassimovel_web/css/imagens/casa4.jpg" />
       <div class="carousel-caption">
-        Foto B
       </div>
     </div>
   </div>

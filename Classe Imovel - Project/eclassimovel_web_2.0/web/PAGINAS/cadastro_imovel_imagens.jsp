@@ -14,7 +14,6 @@
         </div>
     </div>
     <div class="content-box-images">
-
         <%@ include file="/DAO_JSP2/editar_uploadimagem.jsp" %>
     </div>
   </div>

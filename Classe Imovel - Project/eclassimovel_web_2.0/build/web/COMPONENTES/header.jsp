@@ -12,7 +12,7 @@
         <script src="/eclassimovel_web/script/jquery-1.10.2.js" type="text/javascript"></script>
         <script src="/eclassimovel_web/script/jquery.mask.min.js" type="text/javascript"></script>
         <script src="/eclassimovel_web/script/site-mask.js" type="text/javascript"></script>
-        <link href="/eclassimovel_web/css/bootstrap-3.2.0-dist/js/bootstrap.js" rel="stylesheet"/>
+        <script src="/eclassimovel_web/css/bootstrap-3.2.0-dist/js/bootstrap.js" rel="stylesheet"></script>
         <script src="/eclassimovel_web/script/script.js" type="text/javascript"></script>
     </div>
     <nav class="navbar  navbar-default navbar-fixed-top" role="navigation" style="background-color:#000; background: linear-gradient(to left, #890213 50%, #890213 50%);">
@@ -78,6 +78,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp"style="color:#fff"> <span class="glyphicon glyphicon-cog"></span> Minha Conta </a>
+                            <a href ="/eclassimovel_web/DAO_JSP2/excluir_cliente.jsp/?cliente=<%=session.getAttribute("id")%>" style="color:#fff"> <span class="glyphicon glyphicon-remove"></span> Excluir Conta</a>
                         </div>
                 
                     </div>
