@@ -30,7 +30,7 @@ and open the template in the editor.
       </div>
     </div>
     <div class="item">
-      <img src="/eclassimovel_web/css/imagens/casa4.jpg" />
+      <img src="/eclassimovel_web/css/imagens/living_room.jpg" />
       <div class="carousel-caption">
       </div>
     </div>
