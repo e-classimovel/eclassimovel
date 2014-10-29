@@ -10,10 +10,12 @@
     </div>
     <div class="box-base" style="display: none">
         <div class="box-img " >
+            <a href="#" class="btn-remove"  >Remover</a>
             <img class='img-box' width='300' src='' />
         </div>
     </div>
     <div class="content-box-images">
+
         <%@ include file="/DAO_JSP2/editar_uploadimagem.jsp" %>
     </div>
   </div>

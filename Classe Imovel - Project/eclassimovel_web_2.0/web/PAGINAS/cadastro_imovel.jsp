@@ -81,6 +81,7 @@
                         </fieldset>
                         <fieldset>
                             <legend>Dados do Imóvel</legend>
+                            <%@ include file="/DAO_JSP2/email.jsp" %>
                             <div class="form-group">
                                 <label  id="qtd_quartos" class="col-sm-3 control-label">Qtd de Quartos</label>
                                 <div class="col-sm-9">
