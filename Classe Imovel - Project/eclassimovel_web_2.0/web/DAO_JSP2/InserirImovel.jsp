@@ -24,11 +24,14 @@
     String areaUtil = request.getParameter("imovel_area_util");
     String descricao = request.getParameter("imovel_descricao");
     String dtinclusao = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
-    
     String permuta = request.getParameter("imovel_permuta") == null ? "0" : "1";
     String mostrarGmaps = request.getParameter("imovel_mostrar_mapa") == null ? "0" : "1";
-    
     String especificaoImovel = request.getParameter("imovel_especificacao");
+    String cep = request.getParameter("imovel_cep");
+    String rua = request.getParameter("imovel_endereco");
+    String bairro = request.getParameter("imovel_bairro");
+    String cidade = request.getParameter("imovel_cidade");
+    String uf = request.getParameter("imovel_uf");
 
          
     String sqlQuery = "INSERT INTO Tb_Imovel (nome,idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente)"
@@ -50,9 +53,22 @@
                     dtinclusao,
                     idCliente
                 );
+    
 
     PreparedStatement st = connection.prepareStatement(sqlQuery);
     st.executeUpdate(sqlQuery);
+    
+    String sqlQuery2 = "INSERT INTO Tb_Endereco(cep,rua,bairro,cidade,uf) VALUES ('%s','%s','%s','%s','%s');";
+    sqlQuery2 =  String.format(  
+                            sqlQuery2,
+                            cep,
+                            rua,
+                            cidade,
+                            uf
+                            );
+
+    st = connection.prepareStatement(sqlQuery2);
+    st.executeUpdate(sqlQuery2);
 
     String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
     response.setStatus(response.SC_MOVED_TEMPORARILY);

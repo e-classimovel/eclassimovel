@@ -165,6 +165,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="col-sm-3 control-label">UF</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="imovel_uf" class="form-control" >  
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="col-sm-3 control-label">Número</label>
                                     <div class="col-sm-9">
                                         <input type="number" name="imovel_numero" class="form-control" >  
