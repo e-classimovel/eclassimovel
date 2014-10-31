@@ -50,7 +50,7 @@ and open the template in the editor.
 
         <%@ include file = "/COMPONENTES/busca-lateral.jsp" %>
         <div class="content">
-            <div class ="col-sm-8 result-busca home-busca" >                 
+            <div class ="col-sm-8 result-busca home-busca">                 
                 <div class="col-sm-4">
                     <div class="panel panel-default">       
                         <div class="panel-body">
