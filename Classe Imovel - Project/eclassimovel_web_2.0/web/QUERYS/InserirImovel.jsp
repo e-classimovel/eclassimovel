@@ -7,14 +7,8 @@
 <%!
     public String GetQuery(String idFinalidade, String idTipoImovel, String de, String ate)
     {
-        String query = "SELECT " +
-                            "* " + 
-                        "FROM " +
-                            "Tb_Imovel " +
-                        "WHERE " +
-                           
-                            "idTipoImovel = %s " +
-                        "AND valor BETWEEN %s AND %s ";
+         String query = "INSERT INTO Tb_Imovel (nome,idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente)"
+                    + " VALUES ('%s','%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %s); SELECT LAST_INSERT_ID() as id;";
 
         query = String.format(query, idTipoImovel, de, ate);
 

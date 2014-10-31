@@ -8,7 +8,6 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Calendar"%>
 <%@page import="java.sql.PreparedStatement"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@ include file="/DAO_JSP2/conexao.jsp" %>
 <%@ include file="/QUERYS/SelecionarCliente.jsp" %>
@@ -27,15 +26,20 @@
     String permuta = request.getParameter("imovel_permuta") == null ? "0" : "1";
     String mostrarGmaps = request.getParameter("imovel_mostrar_mapa") == null ? "0" : "1";
     String especificaoImovel = request.getParameter("imovel_especificacao");
-    String cep = request.getParameter("imovel_cep");
+
     String rua = request.getParameter("imovel_endereco");
     String bairro = request.getParameter("imovel_bairro");
     String cidade = request.getParameter("imovel_cidade");
     String uf = request.getParameter("imovel_uf");
+    String cep = request.getParameter("imovel_cep");
+    String complemento = request.getParameter("imovel_complemento");
+    String numero = request.getParameter("imovel_numero");
 
-         
-    String sqlQuery = "INSERT INTO Tb_Imovel (nome,idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente)"
-                    + " VALUES ('%s','%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %s);";
+    cep = cep != null ? cep.replace("-", "") : "";
+
+             
+    String sqlQuery = "INSERT INTO Tb_Imovel (nome,idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente, numero, complemento, cep)"
+                    + " VALUES ('%s','%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
 
     sqlQuery =  String.format(
                     sqlQuery,
@@ -51,24 +55,29 @@
                     mostrarGmaps,
                     especificaoImovel,
                     dtinclusao,
-                    idCliente
+                    idCliente,
+                    numero,
+                    complemento,
+                    cep
                 );
     
 
     PreparedStatement st = connection.prepareStatement(sqlQuery);
     st.executeUpdate(sqlQuery);
-    
-    String sqlQuery2 = "INSERT INTO Tb_Endereco(cep,rua,bairro,cidade,uf) VALUES ('%s','%s','%s','%s','%s');";
-    sqlQuery2 =  String.format(  
-                            sqlQuery2,
-                            cep,
-                            rua,
-                            cidade,
-                            uf
-                            );
 
-    st = connection.prepareStatement(sqlQuery2);
-    st.executeUpdate(sqlQuery2);
+    sqlQuery = "SELECT cep FROM Tb_Endereco WHERE cep =" + cep;
+
+    ResultSet result = statement.executeQuery(sqlQuery); 
+    if(!result.first())
+    {
+       
+        sqlQuery = "INSERT INTO Tb_Endereco (cep, rua, bairro, cidade, uf) VALUES ('%s', '%s', '%s', '%s', '%s')";
+
+        sqlQuery = String.format(sqlQuery, cep, rua, bairro, cidade, uf);
+
+        st = connection.prepareStatement(sqlQuery);
+        st.executeUpdate(sqlQuery);
+    }
 
     String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
     response.setStatus(response.SC_MOVED_TEMPORARILY);
@@ -76,4 +85,4 @@
     statement.close();
 %>
 
-<%=sqlQuery%>
+<%= sqlQuery %>

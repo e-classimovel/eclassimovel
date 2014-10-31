@@ -143,43 +143,43 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">CEP</label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="imovel_cep" class="form-control cep" >  
+                                        <input type="text" name="imovel_cep" value="<%=cep%>" class="form-control cep" >  
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Rua</label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="imovel_endereco" class="form-control" value="<%=endereco%>" >  
+                                        <input type="text" name="imovel_endereco" class="form-control" value="<%=rua%>" >  
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Bairro</label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="imovel_bairro" class="form-control" >  
+                                        <input type="text" name="imovel_bairro" value="<%=bairro%>" class="form-control" >  
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Cidade</label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="imovel_cidade" class="form-control" >  
+                                        <input type="text" name="imovel_cidade" value="<%=cidade%>" class="form-control" >  
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">UF</label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="imovel_uf" class="form-control" >  
+                                        <input type="text" name="imovel_uf" value="<%=uf%>" class="form-control" >  
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Número</label>
                                     <div class="col-sm-9">
-                                        <input type="number" name="imovel_numero" class="form-control" >  
+                                        <input type="number" name="imovel_numero" value="<%=numero%>" class="form-control" >  
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 con trol-label">Complemento</label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="imovel_complemento" class="form-control" >  
+                                        <input type="text" name="imovel_complemento" value="<%=complemento%>" class="form-control" >  
                                     </div>
                                 </div>
                                 

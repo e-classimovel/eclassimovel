@@ -16,7 +16,7 @@
                             "idTipoImovel = %s " +
                         "AND valor BETWEEN %s AND %s ";
 
-        query = String.format(query, idFinalidade, idTipoImovel, de, ate);
+        query = String.format(query, idTipoImovel, de, ate);
 
         return query;
     }

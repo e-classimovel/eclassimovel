@@ -23,7 +23,7 @@
     }
  %>
  
-<% while (result.next()) { %>
+<% if (result != null) { while (result.next()) { %>
     <% 
         Blob blob = result.getBlob("imagem");
         int blobLength = (int)blob.length();  
@@ -34,5 +34,5 @@
         <a href="#" class="btn-remove"  data-id="<%= result.getString("id") %>">Remover</a>
         <img class="img-box" width="300" src="<%=imagem%>">
     </div>             
-<%}%>
+<%}}%>
  
