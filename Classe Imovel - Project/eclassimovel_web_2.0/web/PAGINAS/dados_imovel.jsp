@@ -115,7 +115,7 @@
                                 <label id="uf">[B B] </label>
                             </div>
                         </div>
-                        <div id="mapa" style="height: 300px; width:100%; margin: 10px 0px 10px auto ;"></div>
+                        <div id="mapa tamannho-mapa" ></div>
                         
                         
                     </fieldset>

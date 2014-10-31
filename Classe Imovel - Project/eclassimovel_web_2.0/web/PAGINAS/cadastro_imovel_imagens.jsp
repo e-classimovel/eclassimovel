@@ -1,12 +1,12 @@
 
 
-<div class="panel panel-default" style="width:103%;">
+<div class="panel panel-default cadastro-imagens" >
   <div class="panel-heading">
     <h3 class="panel-title">Upload de Imagens</h3>
   </div>
   <div class="panel-body">
     <div class="content-box-principal">
-        <input type="file" style="margin-left:114px;" class="btn-upload" />
+        <input type="file"  class="btn-upload upload-margin" />
     </div>
     <div class="box-base" style="display: none">
         <div class="box-img " >

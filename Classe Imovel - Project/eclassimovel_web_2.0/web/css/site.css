@@ -4,6 +4,10 @@ body.modal-open,
   margin-right: 0;
 }
 
+.clear-left{
+  clear:left;
+}
+
 .modal {
   left: 50%;
   bottom: auto;
@@ -94,7 +98,6 @@ footer{
 
 /* Galeria CSS */
 
-
 .box-img { 
     float: left;
     display: block;
@@ -104,4 +107,73 @@ footer{
     margin-top: 40px;
     margin-right: 70px;
 }
-.box-img img { padding: 15px; border: 1px solid #ccc; background-color: #eee; }
+.box-img img { 
+  padding: 15px; 
+  border: 1px solid #ccc; 
+  background-color: #eee; 
+}
+
+  /* Header */
+
+.nav-header{
+  background-color:#000; 
+  background: linear-gradient(to left, #890213 50%, #890213 50%);
+}
+
+.form-header{
+  color:#fff;
+  margin-top:10px; 
+  font-size:15px;
+}
+
+.link-header{
+  color:#fff;
+}
+
+.logo-header{
+  height:100px; 
+  padding:0px;
+}
+
+/*Busca lateral*/
+
+.busca-lateral{
+  margin-top: 6%;
+}
+
+.texto-busca-lateral{
+  text-align: center;
+}
+
+/*Footer*/
+
+.color-footer{
+  background: #890213;
+}
+
+.texto-footer{
+  color:#fff;
+  margin-left: 10px;
+}
+
+/*Cadastro Imagens*/
+
+.cadastro-imagens{
+  width:103%;
+}
+
+.upload-margin{
+  margin-left:114px;
+}
+
+/*mapa*/
+
+.tamanho-mapa{
+  height: 300px; 
+  width:100%; 
+  margin: 10px 0px 10px auto;
+}
+
+.home-busca{
+  margin-top:2%;
+}

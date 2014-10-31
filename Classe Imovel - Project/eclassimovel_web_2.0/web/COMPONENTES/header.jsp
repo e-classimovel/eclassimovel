@@ -15,7 +15,7 @@
         <script src="/eclassimovel_web/css/bootstrap-3.2.0-dist/js/bootstrap.js" rel="stylesheet"></script>
         <script src="/eclassimovel_web/script/script.js" type="text/javascript"></script>
     </div>
-    <nav class="navbar  navbar-default navbar-fixed-top" role="navigation" style="background-color:#000; background: linear-gradient(to left, #890213 50%, #890213 50%);">
+    <nav class="navbar  navbar-default navbar-fixed-top nav-header" role="navigation" >
   
     <div class="container">
         <div class="col-md-9">
@@ -27,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/eclassimovel_web/PAGINAS/home.jsp" style="height:100px; padding:0px;"><img src="/eclassimovel_web/css/imagens/logo.jpg" width="96px"></a>
+                <a class="navbar-brand logo-header" href="/eclassimovel_web/PAGINAS/home.jsp"><img src="/eclassimovel_web/css/imagens/logo.jpg" width="96px"></a>
             </div><!--navbar-header-->
         
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -61,7 +61,7 @@
                 </form>
             <% }
             else {%>
-                <div class="form-group" style="color:#fff;margin-top:10px; font-size:15px">
+                <div class="form-group form-header">
                     <div class="row">
                         <div class="col-md-12">
                             Bem vindo ${nome_user}
@@ -69,19 +69,19 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="/eclassimovel_web/DAO_JSP2/logout.jsp" style="color:#fff" ><span class="glyphicon glyphicon-off"></span> Sair</a>                    
+                            <a href="/eclassimovel_web/DAO_JSP2/logout.jsp" class="link-header" ><span class="glyphicon glyphicon-off"></span> Sair</a>                    
                         </div>
-                        <div class="col-md-6">
-                            <a href="#"style="color:#fff"> <span class="glyphicon glyphicon-question-sign"></span> Ajuda</a>
+                        <div class="col-md-6"> 
+                            <a href="#" class="link-header"> <span class="glyphicon glyphicon-question-sign"></span> Ajuda</a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp"style="color:#fff"> <span class="glyphicon glyphicon-cog"></span> Minha Conta </a>
-                            <a href ="/eclassimovel_web/DAO_JSP2/excluir_cliente.jsp?cliente=<%=session.getAttribute("id")%>" style="color:#fff"> <span class="glyphicon glyphicon-remove"></span> Excluir Conta</a>
+                            <a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp" class="link-header"> <span class="glyphicon glyphicon-cog"></span> Minha Conta </a>
+                            <a href ="/eclassimovel_web/DAO_JSP2/excluir_cliente.jsp?cliente=<%=session.getAttribute("id")%>" class="link-header"> <span class="glyphicon glyphicon-remove"></span> Excluir Conta</a>
                         </div>
                         <div class="col-md-6">
-                            <a href ="/eclassimovel_web/DAO_JSP2/excluir_imovel.jsp?cliente=<%=session.getAttribute("id")%>" style="color:#fff"> <span class="glyphicon glyphicon-remove"></span> Excluir Imovel</a>
+                            <a href ="/eclassimovel_web/DAO_JSP2/excluir_imovel.jsp?cliente=<%=session.getAttribute("id")%>" class="link-header"> <span class="glyphicon glyphicon-remove"></span> Excluir Imovel</a>
                         </div>            
                     </div>
                 </div>

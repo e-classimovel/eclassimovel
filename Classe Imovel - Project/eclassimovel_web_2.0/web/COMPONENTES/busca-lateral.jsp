@@ -1,7 +1,7 @@
-<div class="col-sm-4" style="margin-top: 6%;">
+<div class="col-sm-4 busca-lateral" >
     
     <div class="panel panel-danger">
-        <div class="panel-heading" style="text-align: center;"><h3>Pesquise seu Imóvel</h3></div>
+        <div class="panel-heading texto-busca-lateral"><h3>Pesquise seu Imóvel</h3></div>
             
             <div class="panel-body">
                 

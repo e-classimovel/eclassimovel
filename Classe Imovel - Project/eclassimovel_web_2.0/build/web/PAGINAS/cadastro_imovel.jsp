@@ -188,7 +188,7 @@
                         <div class="col-sm-7">
                             <%@include file = "/PAGINAS/cadastro_imovel_imagens.jsp" %>
                         </div>
-                        <div style="clear:left"></div>
+                        <div class="clear-left"></div>
                         <div class ="col-sm-5">
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-9">
