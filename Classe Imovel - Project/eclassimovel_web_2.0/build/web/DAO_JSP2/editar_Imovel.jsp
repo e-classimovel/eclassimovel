@@ -14,12 +14,15 @@
 <%
 
     String idMovel = "", qtdQuartos = "", tamanho = "", valor = "", areaUtil = "", vagas = "", googleMaps = "", permuta = "", descricao = "", tipoImovel = "", endereco = "";
+    String complemento = "", numero = "", cep = "", rua = "", bairro = "",  cidade = "", uf = "";
 
     
     if (session.getAttribute("possuiImovel") != null && session.getAttribute("possuiImovel") != "null" && session.getAttribute("possuiImovel") != "0") {
         idMovel =  session.getAttribute("possuiImovel").toString();
 
-        String query = new String("SELECT * FROM Tb_Imovel WHERE id = %s");
+        String query = new String("SELECT * FROM Tb_Imovel imovel "
+                                    + "LEFT JOIN Tb_Endereco endereco ON endereco.cep = imovel.cep "
+                                + "WHERE id = %s");
         query = String.format(query, idMovel);
 
         ResultSet result = statement.executeQuery(query);
@@ -34,6 +37,14 @@
             permuta = result.getString("permuta") == "1" ? "checked" : "";
             descricao = result.getString("descricao");
             tipoImovel = result.getString("idTipoImovel");
+
+            complemento = result.getString("complemento");
+            numero = result.getString("numero");
+            cep = result.getString("cep");
+            rua = result.getString("rua");
+            bairro = result.getString("bairro");
+            cidade = result.getString("cidade");
+            uf = result.getString("uf");
         }
     }
  %>
