@@ -34,7 +34,7 @@
                 <ul class="nav navbar-nav navbar-left">
                     <li class="nav-quem-arredonda"><a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp">${ id == null  ? "CADASTRAR-SE" : "" }</a></li>
 
-                    <li class="nav-cadastrar"><a href="/eclassimovel_web/PAGINAS/cadastro_imovel.jsp">${ id == null  ? "CADASTRAR IMÓVEL" : "EDITAR IMÓVEL" }</a></li>
+                    <li class="nav-cadastrar"><a href="/eclassimovel_web/PAGINAS/cadastro_imovel.jsp">${ id == null  ? "CADASTRAR IMÓVEL" : '<span class="glyphicon glyphicon-pencil"> </span> EDITAR IMÓVEL' }</a></li>
 
                     <li class="nav-quem-somos"><a href="/eclassimovel_web/PAGINAS/quem_somos.jsp">QUEM SOMOS</a></li>
                 </ul>
@@ -61,7 +61,7 @@
                 </form>
             <% }
             else {%>
-                <div class="form-group" style="color:#fff;margin-top:10px;">
+                <div class="form-group" style="color:#fff;margin-top:10px; font-size:15px">
                     <div class="row">
                         <div class="col-md-12">
                             Bem vindo ${nome_user}
@@ -78,9 +78,11 @@
                     <div class="row">
                         <div class="col-md-6">
                             <a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp"style="color:#fff"> <span class="glyphicon glyphicon-cog"></span> Minha Conta </a>
-                            <a href ="/eclassimovel_web/DAO_JSP2/excluir_cliente.jsp/?cliente=<%=session.getAttribute("id")%>" style="color:#fff"> <span class="glyphicon glyphicon-remove"></span> Excluir Conta</a>
+                            <a href ="/eclassimovel_web/DAO_JSP2/excluir_cliente.jsp?cliente=<%=session.getAttribute("id")%>" style="color:#fff"> <span class="glyphicon glyphicon-remove"></span> Excluir Conta</a>
                         </div>
-                
+                        <div class="col-md-6">
+                            <a href ="/eclassimovel_web/DAO_JSP2/excluir_imovel.jsp?cliente=<%=session.getAttribute("id")%>" style="color:#fff"> <span class="glyphicon glyphicon-remove"></span> Excluir Imovel</a>
+                        </div>            
                     </div>
                 </div>
             <% } %>
