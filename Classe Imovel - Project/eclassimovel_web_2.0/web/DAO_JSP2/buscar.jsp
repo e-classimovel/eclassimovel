@@ -21,20 +21,36 @@
     String sqlError = "";
     String idFinalidade = request.getParameter("finalidade");
     String idTipoImovel = request.getParameter("tipoimovel");
+    String uf = request.getParameter("uf");
+    String cidade = request.getParameter("cidade");
+    String bairro = request.getParameter("bairro");
     String de = request.getParameter("de");
     String ate = request.getParameter("ate");
     
-    String query = GetQuery(idFinalidade, idTipoImovel, de, ate);
+    String query = GetQuery(idFinalidade, idTipoImovel, de, ate, uf, cidade, bairro);
      
     result = statement.executeQuery(query);
  %>
+ 
+ 
 <% while (result.next()) { %>
+    <% 
+        String imagem = "";
+
+        if (result.getBlob("imagem") != null)
+        {
+            Blob blob = result.getBlob("imagem");
+            int blobLength = (int)blob.length();  
+            byte[] blobAsBytes = blob.getBytes(1, blobLength);
+            imagem = new String(blobAsBytes).replace(' ', '+');
+        }
+    %> 
     <div class="col-sm-4">
         <div class="panel panel-default">
             <div class="panel-body">
-                <img src='' class="img-rounded" />
+                <img src="<%=imagem%>" class="img-rounded" />
             </div>
-            <div class="panel-footer"><label><%= result.getString("descricao")%></label></div>
+                <div class="panel-footer"><label><a href="/eclassimovel_web/PAGINAS/dados_imovel.jsp?idImovel=<%=result.getString("idImovelCorreto")%>" ><%= result.getString("descricao")%></a></label></div>
         </div>
     </div>             
 <%}%>

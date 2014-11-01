@@ -28,25 +28,18 @@
                             </ol>
 
                             <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img src="../css/imagens/casa1.JPG" >
-                                    <div class="carousel-caption">
-                                        ...
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <img src="../css/imagens/casa2.jpg" >
-                                    <div class="carousel-caption">
-                                        ...
-                                    </div>
-                                </div>
-                                 <div class="item">
-                                    <img src="../css/imagens/casa3.jpg" >
-                                    <div class="carousel-caption">
-                                        ...
-                                    </div>
-                                </div>
+                            <div class="carousel-inner">      
+                                <%  for (int i =0; i < lstImagens.length; i++) { 
+                                        if (lstImagens[i] != null) {
+                                %> 
+                                    
+                                    <div class="item active">
+                                        <img src="<%=lstImagens[i]%>" >
+                                        <div class="carousel-caption">
+                                            ...
+                                        </div>
+                                    </div>   
+                                <%}}%>                                    
                             </div>
 
                             <!-- Controls -->
@@ -81,38 +74,37 @@
                             
                         </div>
 
-                           [Completar os campos]
                     </fieldset>
                     <fieldset>
                         <legend><h3>Localização</h3></legend>
                         <div class="row">
                             <div class="col-md-10">
                                 <label>Rua: </label>
-                                <label id="rua">[Buscar no Banco]</label>
+                                <label id="rua"><%=rua%></label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <label>Número: </label>
-                                <label id="numero">[Buscar no Banco] </label>
+                                <label id="numero"><%=numero%></label>
                             </div>  
                             <div class="col-md-6">
                                 <label>Complemento: </label>
-                                <label id="complemento">[Buscar no Banco] </label>
+                                <label id="complemento"><%=complemento%> </label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <label>Bairro: </label>
-                                <label id = "bairro">[Buscar no Banco] </label>
+                                <label id = "bairro"><%=bairro%> </label>
                             </div>  
                             <div class="col-md-5">
                                 <label>Cidade: </label>
-                                <label id="cidade">[Buscar no Banco] </label>
+                                <label id="cidade"><%=cidade%> </label>
                             </div>
                             <div class="col-md-3">
                                 <label>Estado: </label>
-                                <label id="uf">[B B] </label>
+                                <label id="uf"><%=uf%> </label>
                             </div>
                         </div>
                         <div id="mapa tamannho-mapa" ></div>
@@ -163,18 +155,12 @@
     var marker; 
 
     function Geocoder(){
-        // var rua = $("#rua").val()
-        // var numero = $("#numero").val()
-        // var bairro = $("#bairro").val()
-        // var cidade = $("#cidade").val()
-
-        var rua = "Rua Benedito Aparecido da Silva"
-        var numero = "26"
-        var bairro = "Perus"
-        var cidade = "São Paulo"
-        var uf = "SP"
+         var rua = $("#rua").text();
+         var numero = $("#numero").text();
+         var bairro = $("#bairro").text();
+         var cidade = $("#cidade").text();
      
-        var address = rua +','+numero+', '+ bairro + ', ' + cidade+', Brasil'
+        var address = rua +','+numero+', '+ bairro + ', ' + cidade+', Brasil';
 
         geocoder.geocode({ 'address': address,'region':'BR'}, function (results, status) {
            
@@ -194,24 +180,18 @@
                     map = new google.maps.Map(document.getElementById("mapa"), options);
 
                     marker = new google.maps.Marker({
-                        map: map,
+                        map: map
                     });
 
                     marker.setPosition(latlng);
 
                     var infowindow = new google.maps.InfoWindow(), marker;
 
-                    // google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                    //     return function() {
-                    //         infowindow.setContent(valor.nome+' - Endereço: ' + address);
-                    //         infowindow.open(map, marker);
-                    //     }
-                    // })(marker))
                     
                 }
 
             } else if (status === google.maps.GeocoderStatus.OVER_QUERY_LIMIT){   
-                setTimeout( function(){Geocoder(valor)}, 0);
+                setTimeout( function(){Geocoder(valor);}, 0);
             }
             
         });
