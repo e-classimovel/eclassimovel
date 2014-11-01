@@ -15,11 +15,9 @@
         <script src="/eclassimovel_web/css/bootstrap-3.2.0-dist/js/bootstrap.js" rel="stylesheet"></script>
         <script src="/eclassimovel_web/script/script.js" type="text/javascript"></script>
     </div>
+
     <nav class="navbar  navbar-default navbar-fixed-top nav-header" role="navigation" >
-  
-    <div class="container">
-        <div class="col-md-9">
-    
+        <div class="container">        
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="">
                     <span class="sr-only">Toggle navigation</span>
@@ -31,70 +29,63 @@
             </div><!--navbar-header-->
         
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <% if (session.getAttribute("id") == null) {%>
+                <div style="float:right">
+                    <form class="form" method="POST" action="/eclassimovel_web/DAO_JSP2/login.jsp" role="form" style="float:right; margin-top:1%;">
+
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-addon">@</div>
+                                <input class="form-control" name="email" type="text" placeholder="E-mail">
+                            </div>
+
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon-ok"></span></div>
+                                <input type="password" name="senha" class="form-control" placeholder="Senha">
+                            </div>
+       
+                        <button type="submit" class="btn btn-default">Entrar</button>
+
+                    </form>
+                </div>
+                <% }
+                else {%>
+                <div style="float:right">
+                    <div class="form-group form-header">
+                        <div class="row">
+                            <div class="col-md-12">
+                                Bem vindo ${nome_user}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="/eclassimovel_web/DAO_JSP2/logout.jsp" class="link-header" ><span class="glyphicon glyphicon-off"></span> Sair</a>                    
+                            </div>
+                            <div class="col-md-6"> 
+                                <a href="#" class="link-header"> <span class="glyphicon glyphicon-question-sign"></span> Ajuda</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp" class="link-header"> <span class="glyphicon glyphicon-cog"></span> Minha Conta </a>
+                                <a href ="/eclassimovel_web/DAO_JSP2/excluir_cliente.jsp?cliente=<%=session.getAttribute("id")%>" class="link-header"> <span class="glyphicon glyphicon-remove"></span> Excluir Conta</a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href ="/eclassimovel_web/DAO_JSP2/excluir_imovel.jsp?cliente=<%=session.getAttribute("id")%>" class="link-header"> <span class="glyphicon glyphicon-remove"></span> Excluir Imovel</a>
+                            </div>            
+                        </div>
+                    </div>
+                </div>
+                <% } %>
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="nav-quem-arredonda"><a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp">${ id == null  ? "CADASTRAR-SE" : "" }</a></li>
+                    <!-- <li class="nav-quem-arredonda"><a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp">${ id == null  ? "CADASTRAR-SE" : "" }</a></li> -->
 
                     <li class="nav-cadastrar"><a href="/eclassimovel_web/PAGINAS/cadastro_imovel.jsp">${ id == null  ? "CADASTRAR IMÓVEL" : '<span class="glyphicon glyphicon-pencil"> </span> EDITAR IMÓVEL' }</a></li>
 
                     <li class="nav-quem-somos"><a href="/eclassimovel_web/PAGINAS/quem_somos.jsp">QUEM SOMOS</a></li>
-                </ul>
+                </ul>           
             </div>
         </div>
-        <div class="col-md-3">
-            
-            <% if (session.getAttribute("id") == null) {%>
-            
-                <form class="form" method="POST" action="/eclassimovel_web/DAO_JSP2/login.jsp" role="form" style="float:right; margin-top:1%;">
-
-                        <div class="input-group input-group-sm">
-                            <div class="input-group-addon">@</div>
-                            <input class="form-control" name="email" type="text" placeholder="E-mail">
-                        </div>
-
-                        <div class="input-group input-group-sm">
-                            <div class="input-group-addon"><span class="glyphicon glyphicon-ok"></span></div>
-                            <input type="password" name="senha" class="form-control" placeholder="Senha">
-                        </div>
-   
-                    <button type="submit" class="btn btn-default">Entrar</button>
-
-                </form>
-            <% }
-            else {%>
-                <div class="form-group form-header">
-                    <div class="row">
-                        <div class="col-md-12">
-                            Bem vindo ${nome_user}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a href="/eclassimovel_web/DAO_JSP2/logout.jsp" class="link-header" ><span class="glyphicon glyphicon-off"></span> Sair</a>                    
-                        </div>
-                        <div class="col-md-6"> 
-                            <a href="#" class="link-header"> <span class="glyphicon glyphicon-question-sign"></span> Ajuda</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a href="/eclassimovel_web/PAGINAS/cadastro_cliente.jsp" class="link-header"> <span class="glyphicon glyphicon-cog"></span> Minha Conta </a>
-                            <a href ="/eclassimovel_web/DAO_JSP2/excluir_cliente.jsp?cliente=<%=session.getAttribute("id")%>" class="link-header"> <span class="glyphicon glyphicon-remove"></span> Excluir Conta</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href ="/eclassimovel_web/DAO_JSP2/excluir_imovel.jsp?cliente=<%=session.getAttribute("id")%>" class="link-header"> <span class="glyphicon glyphicon-remove"></span> Excluir Imovel</a>
-                        </div>            
-                    </div>
-                </div>
-            <% } %>
-            
-            
-        </div>
-        
-    </div>
-    
-</nav>
-    
-
+    </nav>
 </header>
             
            
