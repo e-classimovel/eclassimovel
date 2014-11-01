@@ -50,7 +50,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label"> CPF</label>
                                     <div class="col-sm-6">
-                                        <input class="form-control cpf" required name="cliente_cpf" type="text" value="<%=cpf%>"/>
+                                        <input class="form-control cpf" id="cpf" required name="cliente_cpf" type="text" value="<%=cpf%>"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -102,3 +102,51 @@
         <%@ include file = "/COMPONENTES/footer.jsp" %>
     </body>
 </html>
+<script>
+    
+    $('#cpf').blur(function(){
+        if(!TestaCPF($(this).val())){
+            alert("CPF INVÁLIDO")
+            $("#cpf").val("");
+        }            
+    });
+
+    function TestaCPF(strCPF) {
+
+        strCPF = strCPF.replace('.','').replace('.','').replace('-','');
+
+        var Soma =0 ; 
+        
+        var Resto;  
+        
+        if (strCPF == "00000000000")
+            return false; 
+        
+        for (i=1; i<=9; i++) 
+            Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i); 
+        
+        Resto = (Soma * 10) % 11; 
+        
+        if ((Resto == 10) || (Resto == 11)) 
+            Resto = 0; 
+        
+        if (Resto != parseInt(strCPF.substring(9, 10)) ) 
+            return false; 
+        
+        Soma = 0; 
+        
+        for (i = 1; i <= 10; i++) 
+            Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i); 
+        
+        Resto = (Soma * 10) % 11; 
+        
+        if ((Resto == 10) || (Resto == 11)) 
+            Resto = 0; 
+        
+        if (Resto != parseInt(strCPF.substring(10, 11))) 
+            return false; 
+        
+        return true; 
+
+    }
+</script>
