@@ -143,31 +143,31 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">CEP</label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="imovel_cep" value="<%=cep%>" class="form-control cep" >  
+                                        <input id="cep" type="text" onblur="atualizacep(this.value)" name="imovel_cep" value="<%=cep%>" class="form-control cep" >  
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Rua</label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="imovel_endereco" class="form-control" value="<%=rua%>" >  
+                                        <input type="text" id="rua" name="imovel_endereco" class="form-control" value="<%=rua%>" >  
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Bairro</label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="imovel_bairro" value="<%=bairro%>" class="form-control" >  
+                                        <input type="text" id="bairro" name="imovel_bairro" value="<%=bairro%>" class="form-control" >  
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Cidade</label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="imovel_cidade" value="<%=cidade%>" class="form-control" >  
+                                        <input id="cidade" type="text" name="imovel_cidade" value="<%=cidade%>" class="form-control" >  
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">UF</label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="imovel_uf" value="<%=uf%>" class="form-control" >  
+                                        <input id="estado" type="text" name="imovel_uf" value="<%=uf%>" class="form-control" >  
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -224,6 +224,26 @@
                         $("#qtd_quartos1").css("display","block");
                     }
                 })
+                function atualizacep(cep){
+                    cep = cep.replace(/\D/g,"")
+                    url="http://cep.correiocontrol.com.br/"+cep+".js"
+                    s=document.createElement('script')
+                    s.setAttribute('charset','utf-8')
+                    s.src=url
+                    document.querySelector('head').appendChild(s)
+                }
+
+                function correiocontrolcep(valor){
+                    if (valor.erro) {
+                        alert('Cep não encontrado');
+                        return;
+                    };
+                    document.getElementById('rua').value=valor.logradouro
+                    document.getElementById('bairro').value=valor.bairro
+                    document.getElementById('cidade').value=valor.localidade
+                    document.getElementById('uf').value=valor.uf
+                }
+
             </script>
         <%}else{%>
             <%@include file = "/PAGINAS/tela_login.jsp" %>
