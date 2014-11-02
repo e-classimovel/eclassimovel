@@ -117,7 +117,7 @@
                                     <div class="col-sm-offset-3 col-sm-9">
                                         <div class="checkbox">
                                             <label>
-                                                <input name="imovel_mostrar_mapa" type="checkbox" value="<%=googleMaps %>" > Mostrar meu imóvel no Google Maps
+                                                <input name="imovel_mostrar_mapa" type="checkbox" <%=googleMaps %> > Mostrar meu imóvel no Google Maps
                                             </label>
                                         </div>
                                     </div>

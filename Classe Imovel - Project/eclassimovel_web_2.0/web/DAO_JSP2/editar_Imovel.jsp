@@ -33,11 +33,10 @@
             valor = result.getString("valor");
             areaUtil = result.getString("area_util");
             vagas = result.getString("qtdVagas");
-            googleMaps = result.getString("mostrar_gmaps") == "1" ? "checked" : "";
-            permuta = result.getString("permuta") == "1" ? "checked" : "";
+            googleMaps = result.getInt("mostrar_gmaps") == 1 ? "checked" : "";
+            permuta = result.getInt("permuta") == 1 ? "checked" : "";
             descricao = result.getString("descricao");
             tipoImovel = result.getString("idTipoImovel");
-
             complemento = result.getString("complemento");
             numero = result.getString("numero"); 
             cep = result.getString("cep");

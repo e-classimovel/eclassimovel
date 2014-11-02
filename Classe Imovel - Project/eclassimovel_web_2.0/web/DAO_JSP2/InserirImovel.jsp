@@ -37,47 +37,95 @@
 
     cep = cep != null ? cep.replace("-", "") : "";
 
-             
-    String sqlQuery = "INSERT INTO Tb_Imovel (nome,idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente, numero, complemento, cep)"
+    int id_cliente = Integer.parseInt(session.getAttribute("id").trim());
+
+    String query_busca = "SELECT id FROM Tb_Imovel WHERE idCliente = %i;";
+    query_busca = String.format(query_busca,id_cliente);
+    PreparedStatement pst = connection.prepareStatement(query_busca);
+    pst.executeUpdate(query_busca);
+    ResultSet resultado = statement.executeQuery(query_busca);
+
+    String id_imovel = " ";
+    String sqlQuery = " ";
+
+    if(resultado.first()){
+        id = resultado.getString("id");
+
+        sqlQuery = "UPDATE Tb_Imovel SET nome = '%s',idTipoImovel = '%s', tamanho = '%s', valor = '%s', qtdQuartos = '%s', qtdVagas = '%s', area_util = '%s', descricao = '%s', permuta = '%s', mostrar_gmaps = '%s', especificacao_imovel = '%s', idCliente = '%s', numero = '%s', complemento = '%s', cep = '%s' WHERE id = %s ;";
+        sqlQuery =  String.format(
+                        sqlQuery,
+                        nome,
+                        idTipoImovel, 
+                        tamanho, 
+                        valor, 
+                        qtdQuartos, 
+                        qtdVagas,
+                        areaUtil,
+                        descricao,
+                        permuta,
+                        mostrarGmaps,
+                        especificaoImovel,
+                        dtinclusao,
+                        idCliente,
+                        numero,
+                        complemento,
+                        cep,
+                        id_imovel
+                    );
+
+        PreparedStatement pst2 = connection.prepareStatement(sqlQuery);
+        pst2.executeUpdate(sqlQuery);
+        //ResultSet resultado = statement.executeQuery(query_busca);
+
+    } 
+
+    else{
+
+        sqlQuery = "INSERT INTO Tb_Imovel (nome,idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente, numero, complemento, cep)"
                     + " VALUES ('%s','%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
 
-    sqlQuery =  String.format(
-                    sqlQuery,
-                    nome,
-                    idTipoImovel, 
-                    tamanho, 
-                    valor, 
-                    qtdQuartos, 
-                    qtdVagas,
-                    areaUtil,
-                    descricao,
-                    permuta,
-                    mostrarGmaps,
-                    especificaoImovel,
-                    dtinclusao,
-                    idCliente,
-                    numero,
-                    complemento,
-                    cep
-                );
+        sqlQuery =  String.format(
+                        sqlQuery,
+                        nome,
+                        idTipoImovel, 
+                        tamanho, 
+                        valor, 
+                        qtdQuartos, 
+                        qtdVagas,
+                        areaUtil,
+                        descricao,
+                        permuta,
+                        mostrarGmaps,
+                        especificaoImovel,
+                        dtinclusao,
+                        idCliente,
+                        numero,
+                        complemento,
+                        cep
+                    );
     
 
-    PreparedStatement st = connection.prepareStatement(sqlQuery);
-    st.executeUpdate(sqlQuery);
-
-    sqlQuery = "SELECT cep FROM Tb_Endereco WHERE cep =" + cep;
-
-    ResultSet result = statement.executeQuery(sqlQuery); 
-    if(!result.first())
-    {
-       
-        sqlQuery = "INSERT INTO Tb_Endereco (cep, rua, bairro, cidade, uf) VALUES ('%s', '%s', '%s', '%s', '%s')";
-
-        sqlQuery = String.format(sqlQuery, cep, rua, bairro, cidade, uf);
-
-        st = connection.prepareStatement(sqlQuery);
+        PreparedStatement st = connection.prepareStatement(sqlQuery);
         st.executeUpdate(sqlQuery);
+
+        sqlQuery = "SELECT cep FROM Tb_Endereco WHERE cep =" + cep;
+
+        ResultSet result = statement.executeQuery(sqlQuery); 
+        if(!result.first()){
+           
+            sqlQuery = "INSERT INTO Tb_Endereco (cep, rua, bairro, cidade, uf) VALUES ('%s', '%s', '%s', '%s', '%s')";
+
+            sqlQuery = String.format(sqlQuery, cep, rua, bairro, cidade, uf);
+
+            st = connection.prepareStatement(sqlQuery);
+            st.executeUpdate(sqlQuery);
+        }
     }
+
+
+
+             
+    
 
     String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
     response.setStatus(response.SC_MOVED_TEMPORARILY);
