@@ -18,7 +18,7 @@
         <% if (session.getAttribute("id") != null) {%>
                 
             <div class="container">
-                 <div class="row">
+                 <div class="row" style="padding:20px;">
                     <form  action="/eclassimovel_web/DAO_JSP2/InserirImovel.jsp" class="form-horizontal" enctype="multipart/form-data" role="form" method="post">
                         <input type="hidden" class="idMovel" value="<%=idMovel%>"/>
                         <div class ="col-sm-5">
@@ -126,7 +126,7 @@
                                     <div class="col-sm-offset-3 col-sm-9">
                                         <div class="checkbox">
                                             <label>
-                                                <input name="imovel_permuta" type="checkbox" <%=permuta%> > Aceita Permuta
+                                                <input name="imovel_permuta" type="checkbox"  <%=permuta%> > Aceita Permuta
                                             </label>
                                         </div>
                                     </div>
@@ -241,7 +241,7 @@
                     document.getElementById('rua').value=valor.logradouro
                     document.getElementById('bairro').value=valor.bairro
                     document.getElementById('cidade').value=valor.localidade
-                    document.getElementById('uf').value=valor.uf
+                    document.getElementById('estado').value=valor.uf
                 }
 
             </script>

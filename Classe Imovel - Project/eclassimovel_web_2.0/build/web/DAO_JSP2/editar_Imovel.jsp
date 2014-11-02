@@ -39,7 +39,7 @@
             tipoImovel = result.getString("idTipoImovel");
 
             complemento = result.getString("complemento");
-            numero = result.getString("numero");
+            numero = result.getString("numero"); 
             cep = result.getString("cep");
             rua = result.getString("rua");
             bairro = result.getString("bairro");

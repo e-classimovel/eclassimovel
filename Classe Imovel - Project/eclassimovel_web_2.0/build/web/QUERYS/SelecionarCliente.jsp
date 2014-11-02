@@ -16,7 +16,7 @@
                         + "LEFT JOIN Tb_Imovel imovel ON (cliente.id = imovel.idCliente) "
                     + "WHERE "
                         + "cliente.email = '" + email + "'"
-                        + " AND senha = '" + senha + "'";
+                        + " AND cliente.senha = '" + senha + "';";
         return query;
     }
  %>
