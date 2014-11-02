@@ -682,3 +682,34 @@ select.form-control{ width: 260px !important; display:block !important; clear:le
 .nome-projeto{ font-size:12px; }
 select.select-home{ width: 130px !important; }
 }
+
+.logado{
+	float:right;
+}
+.form-logar{
+	float:right;
+	width:20%;
+}
+
+@media (max-width: 767px) {
+	.navbar-nav > li > a{
+		margin-top: 16px;
+		padding-top: 0px;
+  	}
+  	.navbar-brand{
+  		margin-left: 30px;
+  	}
+  	.navbar-toggle{
+  		margin-right: 30px;
+  	}
+  	.logado{
+  		margin-right: 30px;
+  	}
+  	.form-logar{
+  		width:55%;
+  		margin-right: 10px;
+  		margin-top: 10px;
+
+  	}
+
+}
