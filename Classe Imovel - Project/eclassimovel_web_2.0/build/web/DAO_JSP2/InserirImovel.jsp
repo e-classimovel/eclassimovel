@@ -37,7 +37,7 @@
 
     cep = cep != null ? cep.replace("-", "") : "";
 
-    int id_cliente = Integer.parseInt(session.getAttribute("id").trim());
+    int id_cliente = Integer.parseInt(session.getAttribute("id"));
 
     String query_busca = "SELECT id FROM Tb_Imovel WHERE idCliente = %i;";
     query_busca = String.format(query_busca,id_cliente);

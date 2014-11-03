@@ -28,12 +28,19 @@
                             </ol>
 
                             <!-- Wrapper for slides -->
-                            <div class="carousel-inner">      
-                                <%  for (int i =0; i < lstImagens.length; i++) { 
+                            <div class="carousel-inner"> 
+                                <div class="item active">
+                                    <img src="<%=lstImagens[0]%>">
+                                    <div class="carousel-caption">
+                                        ...
+                                    </div>
+                                </div>
+
+                                <%  for (int i =1; i < lstImagens.length; i++) { 
                                         if (lstImagens[i] != null) {
                                 %> 
                                     
-                                    <div class="item active">
+                                    <div class="item">
                                         <img src="<%=lstImagens[i]%>" >
                                         <div class="carousel-caption">
                                             ...
