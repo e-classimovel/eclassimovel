@@ -215,7 +215,7 @@
                         $(".espcificacao_residencial").css("display","none");
                         $("#qtd_quartos").css("display","none");
                         $("#qtd_quartos1").css("display","none");
-
+                        $("#qtd_quartos1").val("");
 
                     }else{
                         $(".espcificacao_residencial").css("display","block");

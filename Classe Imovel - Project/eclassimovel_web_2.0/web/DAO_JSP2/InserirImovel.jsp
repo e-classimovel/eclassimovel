@@ -7,6 +7,7 @@
 <%@page import="java.io.InputStream"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Calendar"%>
+    <%@page import="java.util.Calendar"%>
 <%@page import="java.sql.PreparedStatement"%>
 
 <%@ include file="/DAO_JSP2/conexao.jsp" %>
@@ -18,7 +19,7 @@
     String idTipoImovel = request.getParameter("imovel_tipo_imovel");
     String tamanho = request.getParameter("imovel_tamanho");
     String valor = request.getParameter("imovel_valor"); 
-    String qtdQuartos = request.getParameter("imovel_qtdQuartos");//
+    String qtdQuartos =  idTipoImovel == "2" ? "0" : request.getParameter("imovel_qtdQuartos");
     String qtdVagas = request.getParameter("imovel_vagas_garagem");
     String areaUtil = request.getParameter("imovel_area_util");
     String descricao = request.getParameter("imovel_descricao");
@@ -29,7 +30,7 @@
 
     String rua = request.getParameter("imovel_endereco");
     String bairro = request.getParameter("imovel_bairro");
-    String cidade = request.getParameter("imovel_cidade");
+    String cidade = new String(request.getParameter("imovel_cidade").toString().getBytes("ISO-8859-1"), "UTF-8");
     String uf = request.getParameter("imovel_uf");
     String cep = request.getParameter("imovel_cep");
     String complemento = request.getParameter("imovel_complemento");
@@ -37,24 +38,23 @@
 
     cep = cep != null ? cep.replace("-", "") : "";
 
-    int id_cliente = Integer.parseInt(session.getAttribute("id").trim());
+    String id_cliente = session.getAttribute("id").toString();
 
-    String query_busca = "SELECT id FROM Tb_Imovel WHERE idCliente = %i;";
+    String query_busca = "SELECT id FROM Tb_Imovel WHERE idCliente = %s;";
     query_busca = String.format(query_busca,id_cliente);
-    PreparedStatement pst = connection.prepareStatement(query_busca);
-    pst.executeUpdate(query_busca);
+
     ResultSet resultado = statement.executeQuery(query_busca);
 
     String id_imovel = " ";
     String sqlQuery = " ";
 
     if(resultado.first()){
-        id = resultado.getString("id");
+        String id = resultado.getString("id");
 
-        sqlQuery = "UPDATE Tb_Imovel SET nome = '%s',idTipoImovel = '%s', tamanho = '%s', valor = '%s', qtdQuartos = '%s', qtdVagas = '%s', area_util = '%s', descricao = '%s', permuta = '%s', mostrar_gmaps = '%s', especificacao_imovel = '%s', idCliente = '%s', numero = '%s', complemento = '%s', cep = '%s' WHERE id = %s ;";
+        sqlQuery = "UPDATE Tb_Imovel SET idTipoImovel = '%s', tamanho = '%s', valor = '%s', qtdQuartos = '%s', qtdVagas = '%s', area_util = '%s', descricao = '%s', permuta = '%s', mostrar_gmaps = '%s', especificacao_imovel = '%s', idCliente = '%s', numero = '%s', complemento = '%s', cep = '%s' WHERE id = %s ;";
+        
         sqlQuery =  String.format(
-                        sqlQuery,
-                        nome,
+                        sqlQuery,                        
                         idTipoImovel, 
                         tamanho, 
                         valor, 
@@ -65,28 +65,42 @@
                         permuta,
                         mostrarGmaps,
                         especificaoImovel,
-                        dtinclusao,
                         idCliente,
                         numero,
                         complemento,
                         cep,
-                        id_imovel
+                        id
                     );
 
         PreparedStatement pst2 = connection.prepareStatement(sqlQuery);
         pst2.executeUpdate(sqlQuery);
-        //ResultSet resultado = statement.executeQuery(query_busca);
+
+        sqlQuery = "SELECT cep FROM Tb_Endereco WHERE cep =" + cep;
+
+        ResultSet result = statement.executeQuery(sqlQuery); 
+        if(!result.first()){
+           
+            sqlQuery = "INSERT INTO Tb_Endereco (cep, rua, bairro, cidade, uf) VALUES ('%s', '%s', '%s', '%s', '%s')";
+
+            sqlQuery = String.format(sqlQuery, cep, rua, bairro, cidade, uf);
+
+            PreparedStatement st = connection.prepareStatement(sqlQuery);
+            st.executeUpdate(sqlQuery); 
+        }
 
     } 
+    else
+    {
 
-    else{
+        sqlQuery = "INSERT INTO Tb_Imovel (idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente, numero, complemento, cep)"
+                    + " VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
 
-        sqlQuery = "INSERT INTO Tb_Imovel (nome,idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente, numero, complemento, cep)"
-                    + " VALUES ('%s','%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
+        
+        if (Integer.parseInt(idTipoImovel) == 2)
+            qtdQuartos = "0";
 
         sqlQuery =  String.format(
                         sqlQuery,
-                        nome,
                         idTipoImovel, 
                         tamanho, 
                         valor, 
@@ -122,15 +136,8 @@
         }
     }
 
-
-
-             
-    
-
     String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
     response.setStatus(response.SC_MOVED_TEMPORARILY);
     response.setHeader("Location", redirectPage); 
     statement.close();
 %>
-
-<%= sqlQuery %>

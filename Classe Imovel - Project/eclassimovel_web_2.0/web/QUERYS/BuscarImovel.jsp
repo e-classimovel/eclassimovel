@@ -12,10 +12,11 @@
                             "imovel.id as idImovelCorreto, " +
                             "imovel.*, " +
                             "endereco.*, " +
-                            "imagemImovel.*" + 
+                            //"imagemImovel.*" + 
+                            "(SELECT imagem FROM Tb_Imagem_Imovel WHERE idImovel = imovel.id LIMIT 1) as imagem " +
                         "FROM " +
                             "Tb_Imovel imovel " +
-                            "LEFT JOIN (SELECT * FROM Tb_Imagem_Imovel img LIMIT 1) imagemImovel ON (imagemImovel.idImovel = imovel.id) " +
+                            //"LEFT JOIN (SELECT * FROM Tb_Imagem_Imovel img LIMIT 1) imagemImovel ON (imagemImovel.idImovel = imovel.id) " +
                             "LEFT JOIN Tb_Endereco endereco ON (endereco.cep = imovel.cep) " +
                         "WHERE " +
                             "imovel.idTipoImovel =" + idTipoImovel + " ";

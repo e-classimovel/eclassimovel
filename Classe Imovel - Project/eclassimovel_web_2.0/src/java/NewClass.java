@@ -1,5 +1,8 @@
 
+import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +33,6 @@ public class NewClass {
     public static void main(String[] args) throws UnsupportedEncodingException{
        List<String> teste = new ArrayList<String>();
        
-       teste.add("dasd");
+       Charset.forName("UTF-8").encode("dsad").get;
     }
 }
