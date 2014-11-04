@@ -39,18 +39,18 @@
                                         <label class="col-sm-3 control-label">Especificação do Imovel</label>
                                         <div class="col-sm-9">
                                             <select id="comercial" name="imovel_especificacao" class="form-control">
-                                                <option value="Box/Garagem">Box/Garagem</option>
-                                                <option value="casa_comercial">Casa Comercial</option>
-                                                <option value="conjunto_comercial/sala">Conjunto Comercial/Sala</option>
-                                                <option value="galpa/deposito/armazen">Galpão/Depósito/Armazém</option>
-                                                <option value="hotel">Hotel</option>
-                                                <option value="industria">Industria</option>
-                                                <option value="loja_shopping/ct_comercial">Loja Shopping/Ct Comercial</option>
-                                                <option value="loja/salao">Loja/Salao</option>
-                                                <option value="motel">Motel</option>
-                                                <option value="pousada/chale">Pousada/Chalé</option>
-                                                <option value="predio_inteiro">Prédio Inteiro</option>
-                                                <option value="studio">Studio</option>
+                                                <option value="Box/Garagem" <%= especificacao== "Box/Garagem" ? "selected" : "" %> >Box/Garagem</option>
+                                                <option value="Casa Comercial" <%= especificacao== "Casa Comercial" ? "selected" : "" %> >Casa Comercial</option>
+                                                <option value="Conjunto Comercial/Sala" <%= especificacao== "Conjunto Comercial/Sala" ? "selected" : "" %>>Conjunto Comercial/Sala</option>
+                                                <option value="Galpão/Depósito/Armazém" <%= especificacao== "Galpão/Depósito/Armazém" ? "selected" : "" %>>Galpão/Depósito/Armazém</option>
+                                                <option value="Hotel" <%= especificacao== "Hotel" ? "selected" : "" %> >Hotel</option>
+                                                <option value="Industria" <%= especificacao== "Industria" ? "selected" : "" %> >Industria</option>
+                                                <option value="Loja Shopping/Ct Comercial" <%= especificacao=="Loja Shopping/Ct Comercial" ? "selected" : "" %> >Loja Shopping/Ct Comercial</option>
+                                                <option value="Loja/Salão" <%= especificacao== "Loja/Salão" ? "selected" : "" %> >Loja/Salão</option>
+                                                <option value="Motel" <%= especificacao== "Motel" ? "selected" : "" %> >Motel</option>
+                                                <option value="Pousada/Chalé" <%= especificacao== "Pousada/Chalé" ? "selected" : "" %> >Pousada/Chalé</option>
+                                                <option value="Prédio Inteiro" <%= especificacao== "Prédio Inteiro" ? "selected" : "" %> >Prédio Inteiro</option>
+                                                <option value="Studio" <%= especificacao== "Studio" ? "selected" : "" %> >Studio</option>
                                             </select>
                                         </div>
                                     </div>
@@ -60,20 +60,20 @@
                                         <label class="col-sm-3 control-label">Especificação do Imovel</label>
                                         <div class="col-sm-9">
                                             <select id="residencial" name="especificacao" class="form-control">
-                                                <option value="apartamento_padrao">Apartamento Padrão</option>
-                                                <option value="cobertura">Cobertura</option>
-                                                <option value="kichenette/conjugados">Kichenette/Conjugados</option>
-                                                <option value="loft">Loft</option>
-                                                <option value="casa_condominio">Casa de Condomínio</option>
-                                                <option value="casa_vila">Casa de Vila</option>
-                                                <option value="casa_padrao">Casa Padrao</option>
-                                                <option value="loteamento/condominio">Loteamento/Condomínio</option>
-                                                <option value="terreno_padrao">Terreno Padrão</option>
-                                                <option value="chacara">Chácara</option>
-                                                <option value="fazendo">Fazenda</option>
-                                                <option value="haras">Haras</option>
-                                                <option value="sitio">Sitio</option>
-                                                <option value="flat">Flat</option>
+                                                <option value="Apartamento Padrão">Apartamento Padrão</option>
+                                                <option value="Cobertura">Cobertura</option>
+                                                <option value="Kichenette/Conjugados">Kichenette/Conjugados</option>
+                                                <option value="Loft">Loft</option>
+                                                <option value="Casa Condomínio">Casa de Condomínio</option>
+                                                <option value="Casa de Vila">Casa de Vila</option>
+                                                <option value="Casa Padrão">Casa Padrão</option>
+                                                <option value="Loteamento/Condomínio">Loteamento/Condomínio</option>
+                                                <option value="Terreno Padrão">Terreno Padrão</option>
+                                                <option value="Chácara">Chácara</option>
+                                                <option value="Fazenda">Fazenda</option>
+                                                <option value="Haras">Haras</option>
+                                                <option value="Sitio">Sitio</option>
+                                                <option value="Flat">Flat</option>
                                             </select>
                                         </div>
                                     </div>
@@ -112,7 +112,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Valor</label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="imovel_valor" class="form-control money" value="<%=valor %>"  >  
+                                        <input type="text" id="valor" name="imovel_valor" class="form-control money" value="<%=valor %>"  >  
                                     </div>
                                 </div>
                                  <div class="form-group">
@@ -251,7 +251,10 @@
                     document.getElementById('cidade').value=valor.localidade
                     document.getElementById('estado').value=valor.uf
                 }
-
+                
+                $('#despesas').mask('000.000.000,00',{reverse:true});
+                $('#valor').mask('000.000.000,00',{reverse:true});
+                
                 $("#tipo").change();
 
             </script>
