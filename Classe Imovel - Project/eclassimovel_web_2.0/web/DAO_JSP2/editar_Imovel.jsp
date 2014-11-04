@@ -13,7 +13,8 @@
 <%@ include file="/DAO_JSP2/conexao.jsp" %>
 <%
 
-    String idMovel = "", qtdQuartos = "", tamanho = "", valor = "", areaUtil = "", vagas = "", googleMaps = "", permuta = "", descricao = "", tipoImovel = "", endereco = "";
+    String idMovel = "", qtdQuartos = "", tamanho = "", valor = "", areaUtil = "", vagas = "", googleMaps = "", permuta = "", descricao = "", endereco = "";
+    int tipoImovel = 0;
     String complemento = "", numero = "", cep = "", rua = "", bairro = "",  cidade = "", uf = "";
 
     
@@ -36,7 +37,7 @@
             googleMaps = result.getInt("mostrar_gmaps") == 1 ? "checked" : "";
             permuta = result.getInt("permuta") == 1 ? "checked" : "";
             descricao = result.getString("descricao");
-            tipoImovel = result.getString("idTipoImovel");
+            tipoImovel = result.getInt("idTipoImovel");
             complemento = result.getString("complemento");
             numero = result.getString("numero"); 
             cep = result.getString("cep");
@@ -44,6 +45,7 @@
             bairro = result.getString("bairro");
             cidade = result.getString("cidade");
             uf = result.getString("uf");
+
         }
     }
  %>
