@@ -32,6 +32,7 @@ var ajaxBusca = {
     View: {
         StartEvents: function () {
             ajaxBusca.View.SetEventSearch();
+             $(".btn-search").click();
         },
         
         SetEventSearch: function (){
