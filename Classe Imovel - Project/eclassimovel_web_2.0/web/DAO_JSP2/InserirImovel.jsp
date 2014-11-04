@@ -136,8 +136,22 @@
 
             st = connection.prepareStatement(sqlQuery);
             st.executeUpdate(sqlQuery);
-        }
+        }        
     }
+
+    String novaQuery =  "SELECT "
+                            + "cliente.*,"
+                            + "imovel.id as idMovel "
+                         + "FROM "
+                            + "Tb_Cliente cliente "
+                            + "LEFT JOIN Tb_Imovel imovel ON (cliente.id = imovel.idCliente) "
+                        + "WHERE "
+                            + "cliente.id = '" +  session.getAttribute("id") + "'";
+
+    ResultSet novoResult  = statement.executeQuery(novaQuery);
+
+    if (novoResult.first())
+         session.setAttribute( "possuiImovel", novoResult.getString("idMovel") == "null" ? "" : novoResult.getString("idMovel"));
 
     String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
     response.setStatus(response.SC_MOVED_TEMPORARILY);

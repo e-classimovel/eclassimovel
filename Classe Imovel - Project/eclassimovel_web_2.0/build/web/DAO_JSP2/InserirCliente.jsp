@@ -12,6 +12,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@ include file="/DAO_JSP2/conexao.jsp" %>
+<%@ include file="/QUERYS/SelecionarCliente.jsp" %>
 <%
     //Salvar no Banco
 
@@ -41,6 +42,17 @@
  
     PreparedStatement st = connection.prepareStatement(sqlQuery);
     st.executeUpdate(sqlQuery);
+
+    
+    String novaQuery = GetQuery(clienteEmail, clienteSenha);
+    ResultSet novoResult  = statement.executeQuery(novaQuery);
+
+    if (novoResult.first())
+    {
+        session.setAttribute( "user", novoResult.getString("email"));
+        session.setAttribute( "id", novoResult.getInt("id"));
+        session.setAttribute( "nome_user", novoResult.getString("nome"));
+    }
 
     String redirectPage = new String("/eclassimovel_web/PAGINAS/home.jsp");
     response.setStatus(response.SC_MOVED_TEMPORARILY);
