@@ -30,7 +30,7 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner"> 
                                 <%  for (int i =0; i < lstImagens.length; i++) { 
-                                        if (lstImagens[i] != null && lstImagens[i] != "") {
+                                        if (lstImagens[i] != null && lstImagens[i] != "" &&  lstImagens[i] != " ") {
                                         String active = i == 0 ? "active" : "";
                                 %> 
                                     <div class="item <%=active%>">
@@ -107,7 +107,7 @@
                                 <label id="uf"><%=uf%> </label>
                             </div>
                         </div>
-                        <div id="mapa tamannho-mapa" ></div>
+                        <div id="mapa" class="tamanho-mapa"  ></div>
                         
                         
                     </fieldset>
