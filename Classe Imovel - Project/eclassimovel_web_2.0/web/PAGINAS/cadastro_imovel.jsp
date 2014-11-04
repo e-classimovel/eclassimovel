@@ -81,7 +81,15 @@
                         </fieldset>
                         <fieldset>
                             <legend>Dados do Imóvel</legend>
-                            
+                            <div class="form-group">
+                                    <label class="col-sm-3 control-label">Finalidade</label>
+                                    <div class="col-sm-9">    
+                                        <select id="tipo" name="imovel_finalidade" class="form-control">
+                                            <option value="1">Vender</option>
+                                            <option value="2">Alugar</option> 
+                                        </select>   
+                                    </div>
+                                </div>
                             <div class="form-group">
                                 <label  id="qtd_quartos" class="col-sm-3 control-label">Qtd de Quartos</label>
                                 <div class="col-sm-9">

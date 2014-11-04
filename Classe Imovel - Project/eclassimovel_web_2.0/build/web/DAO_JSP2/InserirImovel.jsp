@@ -27,6 +27,7 @@
     String permuta = request.getParameter("imovel_permuta") == null ? "0" : "1";
     String mostrarGmaps = request.getParameter("imovel_mostrar_mapa") == null ? "0" : "1";
     String especificaoImovel = request.getParameter("imovel_especificacao");
+    String finalidade = request.getParameter("imovel_finalidade");
 
     String rua = request.getParameter("imovel_endereco");
     String bairro = new String(request.getParameter("imovel_bairro").toString().getBytes("ISO-8859-1"), "UTF-8");
@@ -51,7 +52,7 @@
     if(resultado.first()){
         String id = resultado.getString("id");
 
-        sqlQuery = "UPDATE Tb_Imovel SET idTipoImovel = '%s', tamanho = '%s', valor = '%s', qtdQuartos = '%s', qtdVagas = '%s', area_util = '%s', descricao = '%s', permuta = '%s', mostrar_gmaps = '%s', especificacao_imovel = '%s', idCliente = '%s', numero = '%s', complemento = '%s', cep = '%s' WHERE id = %s ;";
+        sqlQuery = "UPDATE Tb_Imovel SET idTipoImovel = '%s', tamanho = '%s', valor = '%s', qtdQuartos = '%s', qtdVagas = '%s', area_util = '%s', descricao = '%s', permuta = '%s', mostrar_gmaps = '%s', especificacao_imovel = '%s', idCliente = '%s', numero = '%s', complemento = '%s', cep = '%s', idFinalidade = '%s' WHERE id = %s ;";
         
         sqlQuery =  String.format(
                         sqlQuery,                        
@@ -69,6 +70,7 @@
                         numero,
                         complemento,
                         cep,
+                        finalidade,
                         id
                     );
 
@@ -92,7 +94,7 @@
     else
     {
 
-        sqlQuery = "INSERT INTO Tb_Imovel (idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente, numero, complemento, cep)"
+        sqlQuery = "INSERT INTO Tb_Imovel (idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente, numero, complemento, cep, idFinalidade)"
                     + " VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
 
         
@@ -115,7 +117,8 @@
                         idCliente,
                         numero,
                         complemento,
-                        cep
+                        cep,
+                        finalidade
                     );
     
 
