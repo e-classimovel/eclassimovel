@@ -47,7 +47,7 @@
     String novaQuery = GetQuery(clienteEmail, clienteSenha);
     ResultSet novoResult  = statement.executeQuery(novaQuery);
 
-    if (novoResult.first())
+    if (novoResult.first() && session.getAttribute("id") != null && session.getAttribute("id") != "")
     {
         session.setAttribute( "user", novoResult.getString("email"));
         session.setAttribute( "id", novoResult.getInt("id"));

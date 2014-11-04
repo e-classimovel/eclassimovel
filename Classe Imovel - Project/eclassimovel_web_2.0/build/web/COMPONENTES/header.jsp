@@ -58,11 +58,6 @@
                             <div class="col-md-6">
                                 <a href="/eclassimovel_web/DAO_JSP2/logout.jsp" class="link-header"><span class="glyphicon glyphicon-off"></span> Sair</a>                    
                             </div>
-                            <div class="col-md-6"> 
-                                <a href="/eclassimovel/PAGINAS/ajuda.jsp" class="link-header"> 
-                                    <span class="glyphicon glyphicon-question-sign"></span> Ajuda
-                                </a>
-                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -71,9 +66,11 @@
                             <div class="col-md-6">
                                 <a href ="/eclassimovel_web/DAO_JSP2/excluir_cliente.jsp?cliente=<%=session.getAttribute("id")%>" class="link-header"> <span class="glyphicon glyphicon-remove"></span> Excluir Conta</a>
                             </div>
-                            <div class="col-md-6">
-                                <a href ="/eclassimovel_web/DAO_JSP2/excluir_imovel.jsp?cliente=<%=session.getAttribute("id")%>" class="link-header"> <span class="glyphicon glyphicon-remove"></span> Excluir Imovel</a>
-                            </div>            
+                            <% if (session.getAttribute("possuiImovel") != "0" && session.getAttribute("possuiImovel") != null) { %>
+                                <div class="col-md-6">
+                                    <a href ="/eclassimovel_web/DAO_JSP2/excluir_imovel.jsp?cliente=<%=session.getAttribute("id")%>" class="link-header"> <span class="glyphicon glyphicon-remove"></span> Excluir Imovel</a>
+                                </div> 
+                            <% } %>
                         </div>
                     </div>
                 </div> 
