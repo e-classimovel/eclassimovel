@@ -39,7 +39,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Data de Nascimento</label>
                                     <div class="col-sm-2">
-                                        <input class="form-control data" required name="cliente_dtNascimento" type="date" value="<%=dtNascimento%>"/>
+                                        <input class="form-control data-input" required name="cliente_dtNascimento" type="date" value="<%=dtNascimento%>"/>
                                     </div>
                   
                                     <label class="col-sm-1 control-label"> RG</label>
