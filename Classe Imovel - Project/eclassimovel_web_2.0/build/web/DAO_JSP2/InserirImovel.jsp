@@ -54,6 +54,9 @@
 
         sqlQuery = "UPDATE Tb_Imovel SET idTipoImovel = '%s', tamanho = '%s', valor = '%s', qtdQuartos = '%s', qtdVagas = '%s', area_util = '%s', descricao = '%s', permuta = '%s', mostrar_gmaps = '%s', especificacao_imovel = '%s', idCliente = '%s', numero = '%s', complemento = '%s', cep = '%s', idFinalidade = '%s' WHERE id = %s ;";
         
+        if (Integer.parseInt(idTipoImovel) == 2)
+            qtdQuartos = "0";
+
         sqlQuery =  String.format(
                         sqlQuery,                        
                         idTipoImovel, 
