@@ -22,7 +22,7 @@
     String qtdQuartos =  idTipoImovel == "2" ? "0" : request.getParameter("imovel_qtdQuartos");
     String qtdVagas = request.getParameter("imovel_vagas_garagem");
     String areaUtil = request.getParameter("imovel_area_util");
-    String descricao = request.getParameter("imovel_descricao");
+    String descricao = new String(request.getParameter("imovel_descricao").toString().getBytes("ISO-8859-1"), "UTF-8");
     String dtinclusao = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
     String permuta = request.getParameter("imovel_permuta") == null ? "0" : "1";
     String mostrarGmaps = request.getParameter("imovel_mostrar_mapa") == null ? "0" : "1";
