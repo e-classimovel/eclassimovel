@@ -29,7 +29,7 @@
     String especificaoImovel = request.getParameter("imovel_especificacao");
 
     String rua = request.getParameter("imovel_endereco");
-    String bairro = request.getParameter("imovel_bairro").toString().getBytes("ISO-8859-1"), "UTF-8");
+    String bairro = new String(request.getParameter("imovel_bairro").toString().getBytes("ISO-8859-1"), "UTF-8");
     String cidade = new String(request.getParameter("imovel_cidade").toString().getBytes("ISO-8859-1"), "UTF-8");
     String uf = request.getParameter("imovel_uf");
     String cep = request.getParameter("imovel_cep");
