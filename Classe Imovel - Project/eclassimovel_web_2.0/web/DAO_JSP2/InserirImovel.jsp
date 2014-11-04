@@ -95,7 +95,7 @@
     {
 
         sqlQuery = "INSERT INTO Tb_Imovel (idTipoImovel, tamanho, valor, qtdQuartos, qtdVagas, area_util, descricao, permuta, mostrar_gmaps, especificacao_imovel, dtInclusao, idCliente, numero, complemento, cep, idFinalidade)"
-                    + " VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
+                    + " VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
 
         
         if (Integer.parseInt(idTipoImovel) == 2)
