@@ -18,7 +18,7 @@
     String idCliente = session.getAttribute("id").toString();
     String idTipoImovel = request.getParameter("imovel_tipo_imovel");
     String tamanho = request.getParameter("imovel_tamanho");
-    String valor = request.getParameter("imovel_valor").replace(".","").replace(",",""); 
+    String valor = request.getParameter("imovel_valor").replace(".","").replace(",","."); 
     String qtdQuartos =  idTipoImovel == "2" ? "0" : request.getParameter("imovel_qtdQuartos");
     String qtdVagas = request.getParameter("imovel_vagas_garagem");
     String areaUtil = request.getParameter("imovel_area_util");

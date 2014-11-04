@@ -122,17 +122,17 @@
                             <form role="form">
                                 <div class="form-group">
                                     <label>E-mail</label>
-                                    <input type="email" class="form-control" placeholder="Enter email">
+                                    <input type="email" class="form-control" placeholder="Inserir email">
                                 </div>
                                 <div class="form-group">
                                     <label>Telefone</label>
-                                    <input type="text" class="form-control" placeholder="Telephone">
+                                    <input type="text" class="form-control" placeholder=" Inserir Telefone">
                                 </div>
                                 <div class="form-group">
                                     <label>Mensagem</label>
                                     <textarea class="form-control"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-envelope"> Enviar</button>
+                                <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-envelope"> Enviar</a>
                             </form>
                         </div>
                   </div>
