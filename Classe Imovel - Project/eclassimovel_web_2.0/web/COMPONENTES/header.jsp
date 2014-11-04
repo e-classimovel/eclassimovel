@@ -84,7 +84,7 @@
                         <a href='/eclassimovel_web/PAGINAS/cadastro_cliente.jsp'>
                              <span class='glyphicon glyphicon-user'></span> CADASTRE-SE </a></li>" : "" }
 
-                    <li class="nav-li"><a href="/eclassimovel_web/PAGINAS/cadastro_imovel.jsp">${ id == null  ? '<span class="glyphicon glyphicon-home"></span> CADASTRAR IMÓVEL' : '<span class="glyphicon glyphicon-pencil"> </span> EDITAR IMÓVEL' }</a></li>
+                    <li class="nav-li"><a href="/eclassimovel_web/PAGINAS/cadastro_imovel.jsp">${ id == null or possuiImovel == null ? '<span class="glyphicon glyphicon-home"></span> CADASTRAR IMÓVEL' : '<span class="glyphicon glyphicon-pencil"> </span> EDITAR IMÓVEL' }</a></li>
 
                     <li class="nav-li"><a href="/eclassimovel_web/PAGINAS/quem_somos.jsp"><span class="glyphicon glyphicon-briefcase"></span> QUEM SOMOS</a></li>
                 </ul>           
