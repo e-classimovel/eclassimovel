@@ -19,60 +19,55 @@
 
     String[] lstImagens = new String[4];
 
-    if (session.getAttribute("possuiImovel") != null && session.getAttribute("possuiImovel") != "null" && session.getAttribute("possuiImovel") != "0") {
-        String idMovel =  request.getParameter("idImovel");
+    String idMovel =  request.getParameter("idImovel");
 
-        String query = new String("SELECT * FROM Tb_Imovel imovel "
-                                         + "LEFT JOIN Tb_Endereco endereco ON endereco.cep = imovel.cep " +
-                                    "WHERE id = '%s'");
-        query = String.format(query, idMovel);
+    String query = new String("SELECT * FROM Tb_Imovel imovel "
+                                     + "LEFT JOIN Tb_Endereco endereco ON endereco.cep = imovel.cep " +
+                                "WHERE id = '%s'");
+    query = String.format(query, idMovel);
 
-        ResultSet result = statement.executeQuery(query);
+    ResultSet result = statement.executeQuery(query);
 
-        if (result.first()){
-            nome = result.getString("nome");
-            qtdQuartos = result.getString("qtdQuartos");
-            tamanho = result.getString("tamanho");
-            valor = result.getString("valor");
-            areaUtil = result.getString("area_util");
-            vagas = result.getString("qtdVagas");
-            googleMaps = result.getString("mostrar_gmaps") == "1" ? "checked" : "";
-            permuta = result.getString("permuta") == "1" ? "checked" : "";
-            descricao = result.getString("descricao");
-            tipoImovel = result.getString("idTipoImovel");
-            especificacao=result.getString("especificacao_imovel");
+    if (result.first()){
+        nome = result.getString("nome");
+        qtdQuartos = result.getString("qtdQuartos");
+        tamanho = result.getString("tamanho");
+        valor = result.getString("valor");
+        areaUtil = result.getString("area_util");
+        vagas = result.getString("qtdVagas");
+        googleMaps = result.getString("mostrar_gmaps") == "1" ? "checked" : "";
+        permuta = result.getString("permuta") == "1" ? "checked" : "";
+        descricao = result.getString("descricao");
+        tipoImovel = result.getString("idTipoImovel");
+        especificacao=result.getString("especificacao_imovel");
 
-            complemento = result.getString("complemento");
-            numero = result.getString("numero");
-            cep = result.getString("cep");
-            rua = result.getString("rua");
-            bairro = result.getString("bairro");
-            cidade = result.getString("cidade");
-            uf = result.getString("uf");
-        }
+        complemento = result.getString("complemento");
+        numero = result.getString("numero");
+        cep = result.getString("cep");
+        rua = result.getString("rua");
+        bairro = result.getString("bairro");
+        cidade = result.getString("cidade");
+        uf = result.getString("uf");
+    }
 
-        query = new String("SELECT * FROM Tb_Imagem_Imovel WHERE idImovel = '%s'");
-        query = String.format(query, idMovel);
+    query = new String("SELECT * FROM Tb_Imagem_Imovel WHERE idImovel = '%s'");
+    query = String.format(query, idMovel);
 
-        result = statement.executeQuery(query);
-        
-        int position = 0;
+    result = statement.executeQuery(query);
 
-        if (result != null)
+    int position = 0;
+
+    if (result != null)
+    {
+        while (result.next())
         {
-            while (result.next())
-            {
-                Blob blob = result.getBlob("imagem");
-                int blobLength = (int)blob.length();  
-                byte[] blobAsBytes = blob.getBytes(1, blobLength);
-                String imagem = new String(blobAsBytes).replace(' ', '+');
+            Blob blob = result.getBlob("imagem");
+            int blobLength = (int)blob.length();  
+            byte[] blobAsBytes = blob.getBytes(1, blobLength);
+            String imagem = new String(blobAsBytes).replace(' ', '+');
 
-                lstImagens[position] = imagem;     
-                position++;
-            }
+            lstImagens[position] = imagem;     
+            position++;
         }
-
-        
-        
     }
 %>
