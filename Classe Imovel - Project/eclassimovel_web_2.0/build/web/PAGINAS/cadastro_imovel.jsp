@@ -29,8 +29,8 @@
                                     <label class="col-sm-3 control-label">Tipo do Imóvel</label>
                                     <div class="col-sm-9">    
                                         <select id="tipo" name="imovel_tipo_imovel" class="form-control">
-                                            <option value="1">Residencial</option>
-                                            <option value="2">Comercial</option> 
+                                            <option value="1" <%= tipoImovel == 1 ? "selected" : "" %> >Residencial</option>
+                                            <option value="2" <%= tipoImovel == 2 ? "selected" : "" %> >Comercial</option> 
                                         </select>   
                                     </div>
                                 </div>
@@ -251,6 +251,8 @@
                     document.getElementById('cidade').value=valor.localidade
                     document.getElementById('estado').value=valor.uf
                 }
+
+                $("#tipo").change();
 
             </script>
         <%}else{%>
